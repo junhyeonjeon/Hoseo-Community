@@ -5,15 +5,19 @@
     display: inline-block;
     text-align: center;
     border: 1px solid #9c9c9c; /* Fallback style */
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    text-shadow: 0 1px 0 rgba(0,0,0,0.4);    
+    border: 1px solid rgba(0, 0, 0, 0.3); 
     box-shadow: 0 0 .05em rgba(0,0,0,0.4);   
     width: 70px;
 }
 
+.button .btn-board{
+	height: 7px;
+	padding: 4px 0px 10px 0px;
+	color: black;
+}
+
 .button, 
 .button span {
-    -moz-border-radius: .3em;
     border-radius: .3em;
     color: #A9A9A9;
 }
@@ -23,7 +27,7 @@
     border-top: 1px solid rgba(255, 255, 255, 0.5);
     display: block;
     padding: 0.5em;
-    background-size: 3px 3px;            
+    background-size: 3px 3px;
 }
 
 .button:hover {

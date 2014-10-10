@@ -1,47 +1,47 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Hoseo Community</title>
-<meta name="keywords" content="" />
-<meta name="description" content="" />
-<link rel="stylesheet" href="css/templatemo_style.css" type="text/css" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>Hoseo Community</title>
+	<meta name="keywords" content="" />
+	<meta name="description" content="" />	
+	<link rel="stylesheet" href="css/templatemo_style.css" type="text/css" />
+		
+	<link rel="stylesheet" href="css/orman.css" type="text/css"	media="screen" />
+	<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+	
+	<link rel="stylesheet" href="css/ddsmoothmenu.css" type="text/css"/>
+	<link rel="stylesheet" href="css/button.css" type="text/css"/>
+		
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/ddsmoothmenu.js"></script>
+	
+	<script language="javascript" type="text/javascript">
+		ddsmoothmenu.init({
+			mainmenuid: "templatemo_menu", //menu DIV id
+			orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
+			classname: 'ddsmoothmenu', //class added to menu's outer DIV
+			//customtheme: ["#1c5a80", "#18374a"],
+			contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+		})
 
-<link rel="stylesheet" href="css/orman.css" type="text/css"
-	media="screen" />
-<link rel="stylesheet" href="css/nivo-slider.css" type="text/css"
-	media="screen" />
-
-<link rel="stylesheet" href="css/ddsmoothmenu.css" type="text/css" />
-<link rel="stylesheet" href="css/button.css" type="text/css" />
-
-<script type="text/javascript" src="js/jquery.min.js"></script>
-<script type="text/javascript" src="js/ddsmoothmenu.js"></script>
-
-<script language="javascript" type="text/javascript">
-	ddsmoothmenu.init({
-		mainmenuid : "templatemo_menu", //menu DIV id
-		orientation : 'h', //Horizontal or vertical menu: Set to "h" or "v"
-		classname : 'ddsmoothmenu', //class added to menu's outer DIV
-		//customtheme: ["#1c5a80", "#18374a"],
-		contentsource : "markup" //"markup" or ["container_id", "path_to_menu_file"]
-	})
-
-	function clearText(field) {
-		if (field.defaultValue == field.value)
-			field.value = '';
-		else if (field.value == '')
-			field.value = field.defaultValue;
-	}
-</script>
-
-<link rel="stylesheet" href="css/slimbox2.css" type="text/css"
-	media="screen" />
-<script type="text/JavaScript" src="js/slimbox2.js"></script>
+		function clearText(field)
+		{
+    		if (field.defaultValue == field.value) 
+    			field.value = '';
+    		else if (field.value == '') 
+    			field.value = field.defaultValue;
+		}
+	</script>
+	
+	<link rel="stylesheet" href="css/slimbox2.css" type="text/css" media="screen" />
+	<script type="text/JavaScript" src="js/slimbox2.js"></script>
+	
 </head>
 
 <body>
 	<div id="templatemo_wrapper">
+	
 		<!-- Start_header -->
 		<div id="templatemo_header">
 			<div id="site_title">
@@ -49,15 +49,13 @@
 			</div>
 			<div id="templatemo_search">
 				<form action="#" method="get">
-					<input type="text" value="Search..." name="keyword" id="keyword"
-						title="keyword" onfocus="clearText(this)" onblur="clearText(this)"
-						class="txt_field" /> <input type="submit" name="Search" value=""
-						alt="Search" id="searchbutton" title="Search" class="sub_btn" />
+					<input type="text" value="Search..." name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)"	class="txt_field" /> 
+					<input type="submit" name="Search" value=""	alt="Search" id="searchbutton" title="Search" class="sub_btn" />
 				</form>
 			</div>
 		</div>
 		<!-- End_header -->
-
+		
 		<!-- Start Menu -->
 		<div id="templatemo_menu" class="ddsmoothmenu">
 			<ul>
@@ -66,22 +64,27 @@
 					<ul>
 						<li><a rel="nofollow" href="board.html?kind=trade">중고 거래</a></li>
 						<li><a rel="nofollow" href="board.html?kind=ad">원룸 광고</a></li>
-						<li><a rel="nofollow" href="board.html?kind=report">사건/사고
-								신고</a></li>
-					</ul></li>
+						<li><a rel="nofollow" href="board.html?kind=report">사건/사고 신고</a></li>
+					</ul>
+				</li>
 				<li><a href="">Board</a>
 					<ul>
 						<li><a rel="nofollow" href="">공지사항</a></li>
 						<li><a rel="nofollow" href="">자유게시판</a></li>
 						<li><a rel="nofollow" href="">학과별 게시판</a></li>
-					</ul></li>
+					</ul>
+				</li>
 				<li><a href="gallery.html" class="selected">Gallery</a></li>
 				<li><a href="blog.html">Blog</a></li>
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
+			
+			<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+			<script src="js/bootstrap.min.js"></script>
+						
 			<div align="right">
-				<a href="#" class="button button-blue"><span>로그인</span></a> <a
-					href="#" class="button button-blue"><span>회원가입</span></a>
+				<a href="#" class="button button-blue"><span>로그인</span></a>
+				<a href="#" class="button button-blue"><span>회원가입</span></a>
 			</div>
 			<!-- <div align="right">
 				<div>
@@ -198,53 +201,31 @@
 		<!-- END of templatemo_main -->
 	</div>
 	<!-- END of templatemo_wrapper -->
-	
 	<div id="templatemo_bottom_wrapper">
 		<div id="templatemo_bottom">
 			<div class="col one_fourth">
 				<h4>Market Place</h4>
 				<ul class="no_bullet">
-					<li><span class="header">
-							<a href="#">중고거래</a>
-						</span> 
-						각종 중고 물품을 사고 팔기가 가능하며, 직거래뿐만 아니라 안전한 온라인거래를 지원해드립니다.
-					</li>
-					<li><span class="header">
-							<a href="#">원룸광고</a>
-						</span> 
-						건물주분들의 원룸광고를 지원해주며, 회원들은 원룸에 대한 정보를 알아 볼 수 있습니다.
-					</li>
-					<li><span class="header">
-							<a href="#">사건/사고 신고</a>
-						</span> 
-						거래 중 발생한 각종 사고를 신고하는 게시판입니다. 불량 이용자는 블랙리스트에 등록되어 사고 재발을 방지합니다.
-					</li>
+					<li><span class="header"> <a href="#">중고거래</a>
+					</span> 각종 중고 물품을 사고 팔기가 가능하며, 직거래뿐만 아니라 안전한 온라인거래를 지원해드립니다.</li>
+					<li><span class="header"> <a href="#">원룸광고</a>
+					</span> 건물주분들의 원룸광고를 지원해주며, 회원들은 원룸에 대한 정보를 알아 볼 수 있습니다.</li>
+					<li><span class="header"> <a href="#">사건/사고 신고</a>
+					</span> 거래 중 발생한 각종 사고를 신고하는 게시판입니다. 불량 이용자는 블랙리스트에 등록되어 사고 재발을 방지합니다.</li>
 				</ul>
 			</div>
 			<div class="col one_fourth">
 				<h4>Board</h4>
 				<ul class="no_bullet">
-					<li><span class="header">
-							<a href="#">공지사항</a>
-						</span> 
-						대학교 혹은 사이트 내의 공지사항을 작성하는 게시판 입니다.
-					</li>
-					<li><span class="header">
-							<a href="#">자유게시판</a>
-						</span> 
-						모든 이용자들이 자유롭게 대화할 수 있는 게시판 입니다.
-					</li>
-					<li><span class="header">
-							<a href="#">익명게시판</a>
-						</span> 
-						무엇이든 터놓고 이야기 할 수 있는 게시판입니다.
-					</li>
-					
-					<li><span class="header">
-							<a href="#">학과별 게시판</a>
-						</span> 
-						각 학과별 전용 게시판을 지원해드립니다.
-					</li>
+					<li><span class="header"> <a href="#">공지사항</a>
+					</span> 대학교 혹은 사이트 내의 공지사항을 작성하는 게시판 입니다.</li>
+					<li><span class="header"> <a href="#">자유게시판</a>
+					</span> 모든 이용자들이 자유롭게 대화할 수 있는 게시판 입니다.</li>
+					<li><span class="header"> <a href="#">익명게시판</a>
+					</span> 무엇이든 터놓고 이야기 할 수 있는 게시판입니다.</li>
+
+					<li><span class="header"> <a href="#">학과별 게시판</a>
+					</span> 각 학과별 전용 게시판을 지원해드립니다.</li>
 				</ul>
 			</div>
 			<div class="col one_fourth">
@@ -258,7 +239,7 @@
 					</a></li>
 					<li><a href="images/gallery/03.jpg" rel="lightbox[portfolio]">
 							<img src="images/gallery/03.jpg" alt="image 8" />
-					</a></li>					
+					</a></li>
 					<li><a href="images/gallery/04.jpg" rel="lightbox[portfolio]">
 							<img src="images/gallery/04.jpg" alt="image 9" />
 					</a></li>
@@ -280,20 +261,14 @@
 				</ul>
 				<div class="clear"></div>
 				<a href="gallery.html" class="more">more</a>
-			</div>			
+			</div>
 			<div class="col one_fourth no_margin_right">
 				<h4>Blog & Contact</h4>
 				<ul class="no_bullet">
-					<li><span class="header">
-							<a href="#">Blog</a>
-						</span> 
-						관리자 전용 블로그입니다. 일상생활, 유용한정보 등 다양한 포스팅을 열람하실 수 있습니다.
-					</li>
-					<li><span class="header">
-							<a href="#">Contact</a>
-						</span> 
-						사이트 이용 중 불편한 사항을 관리자에게 문의 할 수 있습니다.
-					</li>
+					<li><span class="header"> <a href="#">Blog</a>
+					</span> 관리자 전용 블로그입니다. 일상생활, 유용한정보 등 다양한 포스팅을 열람하실 수 있습니다.</li>
+					<li><span class="header"> <a href="#">Contact</a>
+					</span> 사이트 이용 중 불편한 사항을 관리자에게 문의 할 수 있습니다.</li>
 				</ul>
 			</div>
 
@@ -305,8 +280,11 @@
 	<div id="templatemo_footer_wrapper">
 		<div id="templatemo_footer">
 			<p>
-				Copyright © 2014 All rights reserved by <a href="">Jeon Young-Hyeon</a>.<br/>
-				이 웹페이지는 <a href="https://www.google.com/intl/ko/chrome/browser/features.html">Chrome</a> 브라우저에 최적화 되어 있습니다.</p>
+				Copyright © 2014 All rights reserved by <a href="">Jeon
+					Young-Hyeon</a>.<br /> 이 웹페이지는 <a
+					href="https://www.google.com/intl/ko/chrome/browser/features.html">Chrome</a>
+				브라우저에 최적화 되어 있습니다.
+			</p>
 			</p>
 		</div>
 		<!-- END of templatemo_footer -->
