@@ -22,10 +22,11 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
 	color: #555;
-	font-weight: 400;
+	font-weight: bold;
 	padding: 0;
 	margin: 0;
-	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif
+	font-family: 'Nanum Gothic', serif;
+	
 }
 
 h1 {
@@ -97,7 +98,12 @@ img {
 	position: absolute;
 	top: 7px;
 	left: 7px;
-	z-index: 10
+	z-index: 10;
+}
+
+.img_frame img.hot{
+	height: 108px;
+	width: 203px;
 }
 
 .img_frame_13 {
@@ -577,7 +583,12 @@ a.header {
 .footer_gallery {
 	margin: 0;
 	padding: 0;
-	list-style: none
+	list-style: none;
+}
+
+.footer_gallery img{
+	width: 58px;
+	height: 58px;	
 }
 
 .footer_gallery li {
@@ -588,8 +599,14 @@ a.header {
 }
 
 .pagging {
-	margin: 0 0 20px;
-	padding: 0
+	margin: 30px 0px 20px;
+	padding: 0px;
+
+}
+
+.pagging .pg_select{
+	background-color: gray;
+	color: white;
 }
 
 .pagging ul {
@@ -627,4 +644,31 @@ a.header {
 .last_box {
 	margin-bottom: 0;
 	background: none
+}
+
+.search{
+	height: 23px;
+}
+
+.select{
+	padding: 5px;
+}
+
+.table_board{
+	font-size: 12px;
+	width: 950px;
+}
+
+.table_board .tr_board{
+	font-weight: bolder;
+	font-size:13px;
+	background-image: url('../images/add/table_mid.gif');
+}
+
+.table_board .tr_board td{
+	padding: 5px;
+}
+
+.table_board tbody tr td{
+	padding: 4px;
 }

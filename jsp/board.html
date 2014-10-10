@@ -4,42 +4,41 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<title>Hoseo Community</title>
 	<meta name="keywords" content="" />
-	<meta name="description" content="" />	
+	<meta name="description" content="" />
 	<link rel="stylesheet" href="css/templatemo_style.css" type="text/css" />
 	
 	<link rel="stylesheet" href="css/orman.css" type="text/css"	media="screen" />
 	<link rel="stylesheet" href="css/nivo-slider.css" type="text/css" media="screen" />
+
 	<link rel="stylesheet" href="css/ddsmoothmenu.css" type="text/css"/>
 	<link rel="stylesheet" href="css/button.css" type="text/css"/>
-	
+
 	<script type="text/javascript" src="js/jquery.min.js"></script>
 	<script type="text/javascript" src="js/ddsmoothmenu.js"></script>
-	
+
 	<script language="javascript" type="text/javascript">
 		ddsmoothmenu.init({
-			mainmenuid: "templatemo_menu", //menu DIV id
-			orientation: 'h', //Horizontal or vertical menu: Set to "h" or "v"
-			classname: 'ddsmoothmenu', //class added to menu's outer DIV
+			mainmenuid : "templatemo_menu", //menu DIV id
+			orientation : 'h', //Horizontal or vertical menu: Set to "h" or "v"
+			classname : 'ddsmoothmenu', //class added to menu's outer DIV
 			//customtheme: ["#1c5a80", "#18374a"],
-			contentsource: "markup" //"markup" or ["container_id", "path_to_menu_file"]
+			contentsource : "markup" //"markup" or ["container_id", "path_to_menu_file"]
 		})
-
-		function clearText(field)
-		{
-    		if (field.defaultValue == field.value) 
-    			field.value = '';
-    		else if (field.value == '') 
-    			field.value = field.defaultValue;
+	
+		function clearText(field) {
+			if (field.defaultValue == field.value)
+				field.value = '';
+			else if (field.value == '')
+				field.value = field.defaultValue;
 		}
 	</script>
-	
+
 	<link rel="stylesheet" href="css/slimbox2.css" type="text/css" media="screen" />
 	<script type="text/JavaScript" src="js/slimbox2.js"></script>
 </head>
 
 <body>
 	<div id="templatemo_wrapper">
-	
 		<!-- Start_header -->
 		<div id="templatemo_header">
 			<div id="site_title">
@@ -57,8 +56,8 @@
 		<!-- Start Menu -->
 		<div id="templatemo_menu" class="ddsmoothmenu">
 			<ul>
-				<li><a href="index.html" class="selected">Home</a></li>
-				<li><a href="board.html?kind=trade">Market Place</a>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="board.html?kind=trade" class="selected">Market Place</a>
 					<ul>
 						<li><a rel="nofollow" href="board.html?kind=trade">중고 거래</a></li>
 						<li><a rel="nofollow" href="board.html?kind=ad">원룸 광고</a></li>
@@ -89,74 +88,185 @@
 			<br style="clear: left" />
 		</div>
 		<!-- End Menu -->
-		
-		<!-- Start slider -->
-		<div id="templatemo_slider">
-			<div class="slider-wrapper theme-orman">
-				<div class="ribbon"></div>
-				<div id="slider" class="nivoSlider">
-				<a rel="nofollow" href="http://www.hoseo.ac.kr/CmsHome/intro_00022875.eznic" target="_blank">
-					<img src="images/slider/01.jpg" alt="호서대학교" title="호서대학교 로고"/>
-				</a>
-				<a rel="nofollow" href="http://www.hoseo.ac.kr/CmsHome/intro_00022875.eznic" target="_blank">
-					<img src="images/slider/02.jpg" alt="교훈 : 하면된다. 할수있다." title="교훈 : 하면된다! 할수있다!"/>
-				</a>
-				<a rel="nofollow" href="http://www.hoseo.ac.kr/CmsHome/intro_00022875.eznic" target="_blank">
-					<img src="images/slider/03.jpg" alt="중앙도서관과 잔디광장" title="중앙도서관과 잔디광장"/>
-				</a>
-				<a rel="nofollow" href="http://www.hoseo.ac.kr/CmsHome/intro_00022875.eznic" target="_blank">
-					<img src="images/slider/04.jpg" alt="신기술 창업보육센터" title="신기술 창업보육센터"/>
-				</a>
-				<a rel="nofollow" href="http://www.hoseo.ac.kr/CmsHome/intro_00022875.eznic" target="_blank">
-					<img src="images/slider/05.jpg" alt="학교 전경" title="학교 전경"/>
-				</a>
-				<a rel="nofollow" href="http://www.hoseo.ac.kr/CmsHome/intro_00022875.eznic" target="_blank">
-					<img src="images/slider/06.jpg" alt="장영실관" title="장영실관"/>
-				</a> 
-				</div>
-				<div class="nivo-controlNav-bg"></div>
-			</div>
-			<script type="text/javascript" src="js/jquery-1.6.1.min.js"></script>
-			<script type="text/javascript" src="js/jquery.nivo.slider.pack.js"></script>
-			<script type="text/javascript">
-       			$(window).load(function() {
-            		$('#slider').nivoSlider({
-						controlNav:false
-					});
-        		});
-        	</script>
-		</div>
-		<!-- End slider -->
 
-		<!-- Start main -->
 		<div id="templatemo_main">
-			<h2>About</h2>
-			<div class="img_frame img_frame_12 img_nom img_fl">
-				<span></span> 
-				<img src="images/add/about.jpg" alt="" />
+			<div align="left"><h2>Hot Product</h2></div>			
+			<div id="gallery">
+				<div class="col one_fourth gallery_box">
+					<div class="img_frame img_frame_14 img_nom">
+						<span></span> 
+						<a href="images/portfolio/01.jpg" rel="lightbox[new_gallery]">
+							<img class="hot" src="images/portfolio/01.jpg" alt="Gallery Item 1" />
+						</a>
+					</div>
+					<h5>중고 책 팝니다</h5>
+					<div style="float: left">userid</div>
+					<div style="float: right">2014-10-10</div>
+					<a href="#" class="more">MORE</a>
+				</div>
+				<div class="col one_fourth gallery_box">
+					<div class="img_frame img_frame_14 img_nom">
+						<span></span> 
+						<a href="images/portfolio/02.jpg"	rel="lightbox[new_gallery]">
+							<img class="hot" src="images/portfolio/02.jpg" alt="Gallery Item 2" />
+						</a>
+					</div>
+					<h5>새것 같은 사이폰 팔아요</h5>
+					<div style="float: left">userid</div>
+					<div style="float: right">2014-10-10</div>
+					<a href="#" class="more">MORE</a>
+				</div>
+				<div class="col one_fourth gallery_box">
+					<div class="img_frame img_frame_14 img_nom">
+						<span></span> 
+						<a href="images/portfolio/03.jpg"	rel="lightbox[new_gallery]">
+							<img class="hot" src="images/portfolio/03.jpg" alt="Gallery Item 3" />
+						</a>
+					</div>
+					<h5>자전거 팝니다.</h5>
+					<div style="float: left">userid</div>
+					<div style="float: right">2014-10-10</div>
+					<a href="#" class="more">MORE</a>
+				</div>
+				<div class="col one_fourth gallery_box no_margin_right">
+					<div class="img_frame img_frame_14 img_nom">
+						<span></span> 
+						<a href="images/portfolio/04.jpg" rel="lightbox[new_gallery]">
+							<img class="hot" src="images/portfolio/04.jpg" alt="Gallery Item 4" />
+						</a>
+					</div>
+					<h5>바이크 싸게 드립니다</h5>
+					<div style="float: left">userid</div>
+					<div style="float: right">2014-10-10</div>
+					<a href="#" class="more">MORE</a>
+				</div>
 			</div>
-			<div class="half right">
-				<p>
-					<em>기존의 
-						<a href="http://www.hoseo.ac.kr/CmsHome/communication_08.eznic" target="_blank">호서광장 - 벼룩시장</a>
-						은 대학홈페이지의 일부로 접근성이 낮고, 학번이 없는 사용자는 글쓰기가 불가능했습니다. 또한, 커뮤니케이션 기능이 부족해 많은 호서인들이
-						사용하기엔 적합하지 않은 게시판이었습니다. '호서 커뮤니티'는 좀 더 자유로운 대학 게시판을 활성화 하기 위해 만들어졌습니다.
-					</em>
-				</p>
-				<ul class="list_bullet">
-					<li class="flow">누구든지 가입이 가능합니다</li>
-					<li class="flow">쇼핑몰과 같은 안전한 중고거래가 가능합니다</li>
-					<li class="flow">건물주분들은 자유롭게 원룸 광고가 가능합니다</li>
-					<li class="flow">회원은 모든 게시글에 코멘트가 가능합니다</li>
-					<li class="flow">호서커뮤니티는 학과 전용 게시판을 지원해드립니다</li>
-				</ul>
+			<div>
+				<table class="table_board">
+					<colgroup>
+						<col width="60">
+						<col width="*">
+						<col width="130">
+						<col width="100">
+						<col width="70">
+					</colgroup>
+					<thead>
+						<tr class="tr_board">
+							<td align="center">번호</td>
+							<td align="center">제목</td>
+							<td align="center">작성자</td>
+							<td align="center">작성일</td>
+							<td align="center">조회</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td align="center">1</td>
+							<td align="left"><a href="#">제목</a></td>
+							<td align="center"><a href="#">userid</a></td>
+							<td align="center">2014-08-16</td>
+							<td align="center">30</td>
+						</tr>
+						<tr>
+							<td align="center">2</td>
+							<td align="left"><a href="#">제목</a></td>
+							<td align="center"><a href="#">userid</a></td>
+							<td align="center">2014-08-16</td>
+							<td align="center">30</td>
+						</tr>
+						<tr>
+							<td align="center">3</td>
+							<td align="left"><a href="#">제목</a></td>
+							<td align="center"><a href="#">userid</a></td>
+							<td align="center">2014-08-16</td>
+							<td align="center">30</td>
+						</tr>
+						<tr>
+							<td align="center">4</td>
+							<td align="left"><a href="#">제목</a></td>
+							<td align="center"><a href="#">userid</a></td>
+							<td align="center">2014-08-16</td>
+							<td align="center">30</td>
+						</tr>
+						<tr>
+							<td align="center">5</td>
+							<td align="left"><a href="#">제목</a></td>
+							<td align="center"><a href="#">userid</a></td>
+							<td align="center">2014-08-16</td>
+							<td align="center">30</td>
+						</tr>
+						<tr>
+							<td align="center">6</td>
+							<td align="left"><a href="#">제목</a></td>
+							<td align="center"><a href="#">userid</a></td>
+							<td align="center">2014-08-16</td>
+							<td align="center">30</td>
+						</tr>
+						<tr>
+							<td align="center">7</td>
+							<td align="left"><a href="#">제목</a></td>
+							<td align="center"><a href="#">userid</a></td>
+							<td align="center">2014-08-16</td>
+							<td align="center">30</td>
+						</tr>
+						<tr>
+							<td align="center">8</td>
+							<td align="left"><a href="#">제목</a></td>
+							<td align="center"><a href="#">userid</a></td>
+							<td align="center">2014-08-16</td>
+							<td align="center">30</td>
+						</tr>
+						<tr>
+							<td align="center">9</td>
+							<td align="left"><a href="#">제목</a></td>
+							<td align="center"><a href="#">userid</a></td>
+							<td align="center">2014-08-16</td>
+							<td align="center">30</td>
+						</tr>
+						<tr>
+							<td align="center">10</td>
+							<td align="left"><a href="#">제목</a></td>
+							<td align="center"><a href="#">userid</a></td>
+							<td align="center">2014-08-16</td>
+							<td align="center">30</td>
+						</tr>
+
+					</tbody>
+				</table>
 			</div>
 
-			<div class="clear h40"></div>
+			<div class="clear"></div>
+			<div class="pagging">
+				<ul>
+					<li><a href="#">Previous</a></li>
+					<li><a href="#" class="pg_select">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li><a href="#">6</a></li>
+					<li><a href="#">7</a></li>
+					<li><a href="#">8</a></li>
+					<li><a href="#">Next</a></li>
+				</ul>
+				<div align="right">
+					<select class="select">
+						<option>전체</option>
+						<option>제목</option>
+						<option>내용</option>
+						<option>작성자</option>						
+					</select>
+					<input type="text" class="search"/>
+					<a href="#" class="button button-search"><span>검색</span></a>
+					&nbsp;
+					<a href="#" class="button button-search"><span>글쓰기</span></a>
+				</div>
+			</div>			
 			<div class="clear"></div>
 
+			<div class="clear"></div>
 		</div>
-		<!-- End main -->
+		<!-- END of templatemo_main -->
 	</div>
 	<!-- END of templatemo_wrapper -->
 	
