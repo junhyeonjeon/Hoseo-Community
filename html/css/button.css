@@ -41,16 +41,16 @@
 }
 
 .button-blue {
-    background: #4477a1;
+    background: #3c3c3c;
     background: -webkit-gradient(linear, left top, left bottom, from(#3b3b3b), to(#3c3c3c) );
-    background: -moz-linear-gradient(-90deg, #81a8cb, #4477a1);
+    background: -moz-linear-gradient(-90deg, #3b3b3b, #3c3c3c);
     filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#3b3b3b', endColorstr='#3c3c3c');
 }
 
 .button-blue:hover {
-    background: #81a8cb;
+    background: #3b3b3b;
     background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#3b3b3b) );
-    background: -moz-linear-gradient(-90deg, #4477a1, #81a8cb);
+    background: -moz-linear-gradient(-90deg, #000000, #3b3b3b);
     filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#000000', endColorstr='#3b3b3b');            
 }
 
@@ -59,19 +59,37 @@
 }
 
 .button-search {
-    background: #4477a1;
+    background: #d1cbce;
     background: -webkit-gradient(linear, left top, left bottom, from(#f7f3f0), to(#d1cbce) );
-    background: -moz-linear-gradient(-90deg, #81a8cb, #4477a1);
+    background: -moz-linear-gradient(-90deg, #f7f3f0, #d1cbce);
     filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#f7f3f0', endColorstr='#d1cbce');
 }
 
 .button-search:hover {
-    background: #81a8cb;
+    background: #ffffff;
     background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff) );
-    background: -moz-linear-gradient(-90deg, #4477a1, #81a8cb);
+    background: -moz-linear-gradient(-90deg, #ffffff, #ffffff);
     filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#ffffff', endColorstr='#ffffff');            
 }
 
 .button-search:active {
     background: #f8f8f8;
+}
+
+.button-green {
+    background: #15aba0;
+    background: -webkit-gradient(linear, left top, left bottom, from(#74e0d3), to(#15aba0) );
+    background: -moz-linear-gradient(-90deg, #74e0d3, #15aba0);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#74e0d3', endColorstr='#15aba0');
+}
+
+.button-green:hover {
+    background: #85f1e4;
+    background: -webkit-gradient(linear, left top, left bottom, from(#74e0d3), to(#85f1e4) );
+    background: -moz-linear-gradient(-90deg, #74e0d3, #85f1e4);
+    filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#74e0d3', endColorstr='#85f1e4');            
+}
+
+.button-green:active {
+    background: #15aba0;
 }
