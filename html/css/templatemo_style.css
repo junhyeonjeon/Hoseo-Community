@@ -663,6 +663,7 @@ a.header {
 	font-weight: bolder;
 	font-size:13px;
 	background-image: url('../images/add/table_mid.gif');
+	text-align: center;
 }
 
 .table_board .tr_board td{
