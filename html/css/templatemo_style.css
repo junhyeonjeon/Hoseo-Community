@@ -101,6 +101,14 @@ img {
 	z-index: 10;
 }
 
+img.hot_label{
+	z-index: 11;
+}
+
+img.hot{
+	height: 80px;
+}
+
 .img_frame img.hot{
 	height: 108px;
 	width: 203px;
