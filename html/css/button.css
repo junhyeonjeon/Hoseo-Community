@@ -47,6 +47,13 @@
     filter:  progid:DXImageTransform.Microsoft.gradient(GradientType=0,startColorstr='#3b3b3b', endColorstr='#3c3c3c');
 }
 
+.register{
+	width: 150px;
+	height: 40px;
+	font-size: 17px;
+	margin-bottom: 10px;
+}
+
 .button-blue:hover {
     background: #3b3b3b;
     background: -webkit-gradient(linear, left top, left bottom, from(#000000), to(#3b3b3b) );

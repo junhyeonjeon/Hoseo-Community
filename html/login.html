@@ -46,7 +46,7 @@
 		<!-- Start_header -->
 		<div id="templatemo_header">
 			<div id="site_title">
-				<img src="./images/add/intro_tex01.png" alt="Venture1st_호서대학교" />
+				<img src="./images/add/intro_tex02.jpg" alt="Venture1st_호서대학교" />
 			</div>
 			<div id="templatemo_search">
 				<form action="#" method="get">
@@ -65,14 +65,15 @@
 					<ul>
 						<li><a rel="nofollow" href="board.html?kind=trade">중고 거래</a></li>
 						<li><a rel="nofollow" href="board.html?kind=ad">원룸 광고</a></li>
+						<li><a rel="nofollow" href="board.html?kind=nanum">무료 나눔</a></li>
 						<li><a rel="nofollow" href="board.html?kind=report">사건/사고 신고</a></li>
 					</ul>
 				</li>
-				<li><a href="">Board</a>
+				<li><a href="board.html?kind=free">Board</a>
 					<ul>
-						<li><a rel="nofollow" href="">공지사항</a></li>
-						<li><a rel="nofollow" href="">자유게시판</a></li>
-						<li><a rel="nofollow" href="">학과별 게시판</a></li>
+						<li><a rel="nofollow" href="board.html?kind=free">자유게시판</a></li>
+						<li><a rel="nofollow" href="board.html?kind=none">익명게시판</a></li>
+						<li><a rel="nofollow" href="board.html?kind=major">학과별 게시판</a></li>
 					</ul>
 				</li>
 				<li><a href="gallery.html">Gallery</a></li>
@@ -84,7 +85,7 @@
 			<script src="js/bootstrap.min.js"></script>
 						
 			<div align="right">
-				<a href="#" class="button button-blue"><span>로그인</span></a>
+				<a href="login.html" class="button button-blue"><span>로그인</span></a>
 				<a href="#" class="button button-blue"><span>회원가입</span></a>
 			</div>
 			<!-- <div align="right">
@@ -96,30 +97,26 @@
 			<br style="clear: left" />
 		</div>
 		<!-- End Menu -->
+		
 		<div id="templatemo_main">
 			<div class="clear h40"></div>
 			<div class="clear h40"></div>
 				
-			<div align="center" style="margin: 0px auto; width: 550px; height: 300px; background-color: #343434; padding: 10px;
-   border-radius: 5px;
-   -moz-border-radius: 5px;
-   -webkit-border-radius: 5px;
-   -o-border-radius: 5px;
-   box-shadow: 0px 0px 25px black;"">
-			    <div style="margin-top: 50px;">
-			    	<label style="font-size: 45px; color: white;">LOGIN HERE</label>
+			<div align="center" class="login_form">
+			    <div class="login_here">
+			    	<label>LOGIN HERE</label>
 			    </div>
-			    <div align="center" style="margin-top: 40px; margin-right: 150px;">
-			    	<div align="right" style="color: white; font-size: 14px;">
+			    <div align="center" class="login_input">
+			    	<div align="right">
 			    		User ID : <input type="text"/>
 			    	</div>
 			    	<div class="clear h20"></div>
-			    	<div align="right" style="color: white; font-size: 14px;">
+			    	<div align="right">
 			    		Password : <input type="password"/>
 			    	</div>
 			    	<div class="clear h20"></div>
 			    </div>
-			    <div align="center" style="margin: 0px auto;">
+			    <div align="center">
 			    		<a href="#" class="button button-blue"><span>회원가입</span></a>
 			    		<a href="#" class="button button-blue" style="width: 100px; padding: 0px;"><span>회원정보 찾기</span></a>
 			    		<a href="#" class="button button-blue"><span>로그인</span></a>
@@ -139,19 +136,24 @@
 				<h4>Market Place</h4>
 				<ul class="no_bullet">
 					<li><span class="header">
-							<a href="#">중고거래</a>
+							<a href="board.html?kind=trade">중고거래</a>
 						</span> 
-						각종 중고 물품을 사고 팔기가 가능하며, 직거래뿐만 아니라 안전한 온라인거래를 지원해드립니다.
+						<p>각종 중고 물품 사고 팔기가 가능합니다.</p>
 					</li>
 					<li><span class="header">
-							<a href="#">원룸광고</a>
+							<a href="board.html?kind=ad">원룸광고</a>
 						</span> 
-						건물주분들의 원룸광고를 지원해주며, 회원들은 원룸에 대한 정보를 알아 볼 수 있습니다.
+						<p>건물주분들의 원룸광고를 지원해주며, 학생분들은 원룸 정보를 알아 볼 수 있습니다.</p>
 					</li>
 					<li><span class="header">
-							<a href="#">사건/사고 신고</a>
+							<a href="board.html?kind=nanum">무료나눔</a>
 						</span> 
-						거래 중 발생한 각종 사고를 신고하는 게시판입니다. 불량 이용자는 블랙리스트에 등록되어 사고 재발을 방지합니다.
+						<p>아름다운 나눔을 실천해보세요.</p>
+					</li>
+					<li><span class="header">
+							<a href="board.html?kind=report">사건/사고 신고</a>
+						</span> 
+						<p>거래 중의 각종 사고를 신고할 수 있습니다. 불량 이용자는 블랙리스트에 등록됩니다.</p>
 					</li>
 				</ul>
 			</div>
@@ -159,25 +161,19 @@
 				<h4>Board</h4>
 				<ul class="no_bullet">
 					<li><span class="header">
-							<a href="#">공지사항</a>
+							<a href="board.html?kind=free">자유게시판</a>
 						</span> 
-						대학교 혹은 사이트 내의 공지사항을 작성하는 게시판 입니다.
+						<p>모든 이용자들이 자유롭게 대화할 수 있는 게시판 입니다.</p>
 					</li>
 					<li><span class="header">
-							<a href="#">자유게시판</a>
+							<a href="board.html?kind=none">익명게시판</a>
 						</span> 
-						모든 이용자들이 자유롭게 대화할 수 있는 게시판 입니다.
-					</li>
+						<p>무엇이든 터놓고 이야기 할 수 있는 게시판입니다.</p>
+					</li>					
 					<li><span class="header">
-							<a href="#">익명게시판</a>
+							<a href="board.html?kind=major">학과별 게시판</a>
 						</span> 
-						무엇이든 터놓고 이야기 할 수 있는 게시판입니다.
-					</li>
-					
-					<li><span class="header">
-							<a href="#">학과별 게시판</a>
-						</span> 
-						각 학과별 전용 게시판을 지원해드립니다.
+						<p>각 학과별 전용 게시판을 지원해드립니다.</p>
 					</li>
 				</ul>
 			</div>
@@ -219,14 +215,14 @@
 				<h4>Blog & Contact</h4>
 				<ul class="no_bullet">
 					<li><span class="header">
-							<a href="#">Blog</a>
+							<a href="blog.html">Blog</a>
 						</span> 
-						관리자 전용 블로그입니다. 일상생활, 유용한정보 등 다양한 포스팅을 열람하실 수 있습니다.
+						<p>관리자 전용 블로그입니다. 일상생활, 유용한정보 등 다양한 포스팅을 열람하실 수 있습니다.</p>
 					</li>
 					<li><span class="header">
-							<a href="#">Contact</a>
+							<a href="contact.html">Contact</a>
 						</span> 
-						사이트 이용 중 불편한 사항을 관리자에게 문의 할 수 있습니다.
+						<p>사이트 이용 중 불편한 사항을 관리자에게 문의 할 수 있습니다.</p>
 					</li>
 				</ul>
 			</div>

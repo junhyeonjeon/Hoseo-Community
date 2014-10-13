@@ -1,0 +1,319 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Hoseo Community</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="css/templatemo_style.css" type="text/css" />
+
+<link rel="stylesheet" href="css/orman.css" type="text/css"
+	media="screen" />
+<link rel="stylesheet" href="css/nivo-slider.css" type="text/css"
+	media="screen" />
+
+<link rel="stylesheet" href="css/ddsmoothmenu.css" type="text/css" />
+<link rel="stylesheet" href="css/button.css" type="text/css" />
+<link rel="stylesheet" href="css/join.css" type="text/css" />
+<link rel="stylesheet" href="css/login.css" type="text/css" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/ddsmoothmenu.js"></script>
+
+<script language="javascript" type="text/javascript">
+	ddsmoothmenu.init({
+		mainmenuid : "templatemo_menu", //menu DIV id
+		orientation : 'h', //Horizontal or vertical menu: Set to "h" or "v"
+		classname : 'ddsmoothmenu', //class added to menu's outer DIV
+		//customtheme: ["#1c5a80", "#18374a"],
+		contentsource : "markup" //"markup" or ["container_id", "path_to_menu_file"]
+	})
+
+	function clearText(field) {
+		if (field.defaultValue == field.value)
+			field.value = '';
+		else if (field.value == '')
+			field.value = field.defaultValue;
+	}
+</script>
+
+<link rel="stylesheet" href="css/slimbox2.css" type="text/css"
+	media="screen" />
+<script type="text/JavaScript" src="js/slimbox2.js"></script>
+</head>
+
+<body>
+	<div id="templatemo_wrapper">
+		<!-- Start_header -->
+		<div id="templatemo_header">
+			<div id="site_title">
+				<img src="./images/add/intro_tex02.jpg" alt="Venture1st_호서대학교" />
+			</div>
+			<div id="templatemo_search">
+				<form action="#" method="get">
+					<input type="text" value="Search..." name="keyword" id="keyword"
+						title="keyword" onfocus="clearText(this)" onblur="clearText(this)"
+						class="txt_field" /> <input type="submit" name="Search" value=""
+						alt="Search" id="searchbutton" title="Search" class="sub_btn" />
+				</form>
+			</div>
+		</div>
+		<!-- End_header -->
+
+		<!-- Start Menu -->
+		<div id="templatemo_menu" class="ddsmoothmenu">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="board.html?kind=trade">Market Place</a>
+					<ul>
+						<li><a rel="nofollow" href="board.html?kind=trade">중고 거래</a></li>
+						<li><a rel="nofollow" href="board.html?kind=ad">원룸 광고</a></li>
+						<li><a rel="nofollow" href="board.html?kind=nanum">무료 나눔</a></li>
+						<li><a rel="nofollow" href="board.html?kind=report">사건/사고
+								신고</a></li>
+					</ul></li>
+				<li><a href="board.html?kind=free">Board</a>
+					<ul>
+						<li><a rel="nofollow" href="board.html?kind=free">자유게시판</a></li>
+						<li><a rel="nofollow" href="board.html?kind=none">익명게시판</a></li>
+						<li><a rel="nofollow" href="board.html?kind=major">학과별
+								게시판</a></li>
+					</ul></li>
+				<li><a href="gallery.html">Gallery</a></li>
+				<li><a href="blog.html">Blog</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+
+			<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+			<script src="js/bootstrap.min.js"></script>
+
+			<div align="right">
+				<a href="login.html" class="button button-blue"><span>로그인</span></a>
+				<a href="#" class="button button-blue"><span>회원가입</span></a>
+			</div>
+			<!-- <div align="right">
+				<div>
+					<a>admin</a> 새쪽지 0
+				</div>
+				로그아웃
+			</div> -->
+			<br style="clear: left" />
+		</div>
+		<!-- End Menu -->
+
+		<div id="templatemo_main">
+			
+			<div align="center" class="login_form" style="height: 100%;">
+			    <div class="login_here">
+			    	<label>REGISTER HERE</label>
+			    </div>
+			    <div class="clear h20"></div>
+			    <div style="width: 400px;">
+			    	<div class="row_group">
+						<div id="idDiv" class="join_row">
+							<span class="ps_box int_id">
+								<input type="text" value="" maxlength="12" placeholder="아이디" class="int input_id"/>
+							</span>
+							<div class="error" style="display: block">필수 정보입니다.</div>
+						</div>
+						<div class="join_row">
+							<span class="ps_box int_pass">
+								<input type="password" maxlength="16" placeholder="비밀번호" class="int input_pw"/>
+							</span>
+							<div class="error" style="display: block">필수 정보입니다.</div>
+						</div>
+						<div class="join_row">
+							<span class="ps_box int_pass">
+								<input type="password" maxlength="16" placeholder="비밀번호 재입력" class="int input_pw"/>
+							</span>
+							<div class="error" style="display: block">필수 정보입니다.</div>
+						</div>
+					</div>
+					
+					<div class="row_group">
+						<div class="join_row">
+							<span class="ps_box">
+								<input type="text" maxlength="40" value=""placeholder="이름" class="int"/>
+							</span>
+							<div class="error" style="display: block;">필수 정보입니다.</div>
+						</div>
+						
+						<div class="join_row join_birthday">
+							<div class="join_birth">
+								<div class="bir_yy">
+									<span class="ps_box">
+										<input type="text" maxlength="4" value="" placeholder="생년" class="int"> 
+									</span>
+								</div>
+								<div class="bir_mm">
+									<span class="ps_box">
+										<select title="월" class="sel">
+											<option value="">월</option>
+										  	 			<option value="1">1</option>
+										  	 			<option value="2">2</option>
+										  	 			<option value="3">3</option>
+										  	 			<option value="4">4</option>
+										  	 			<option value="5">5</option>
+										  	 			<option value="6">6</option>
+										  	 			<option value="7">7</option>
+										  	 			<option value="8">8</option>
+										  	 			<option value="9">9</option>
+										  	 			<option value="10">10</option>
+										  	 			<option value="11">11</option>
+										  	 			<option value="12">12</option>
+										</select>
+									</span>
+								</div>
+								<div class=" bir_dd">
+									<span class="ps_box">
+										<input type="text" maxlength="2" value="" placeholder="일" class="int">
+									</span>
+								</div>
+							</div>
+							<span class="error" style="display: block;">필수 정보입니다.</span>
+						</div>
+						
+						<div class="join_row join_email">
+							<span class="ps_box int_email">
+								<input type="email" maxlength="100" value="" placeholder="이메일" class="int">
+							</span>
+							<div class="error" style="display: block">필수 정보입니다.</div>
+						</div>
+					</div>
+					
+					<div class="row_group" style="display:block">
+						<div class="join_row join_mobile">
+							<span class="ps_box country_code">
+								<span class="sel_value">+82</span>
+							</span>
+							<span class="ps_box int_mobile"> 
+								<input type="text" maxlength="16" value="" placeholder="휴대전화번호" class="int">
+							</span>
+							<div class="error" style="display: block;">전화번호를 다시 확인해주세요.</div> 
+							<a href="#" class="btn_c btn_mobile_submit">인증</a>
+						</div>
+						
+						<div id="authnoDiv" class="join_row join_mobile_certify">
+							<span class="ps_box int_mobile_certify"> 
+								<input type="text" maxlength="6" value="" placeholder="인증번호" class="int">								
+							</span>
+							<div class="error" style="display: block;">인증번호를 다시 확인해주세요.</div>
+							<a href="#" class="btn_c btn_mobile_submit">확인</a>
+						</div>
+					</div>
+					
+				</div>
+				<a href="#" class="button button-blue register"><span>가입하기</span></a>
+			</div>
+			
+			
+			
+		</div>
+		<!-- END of templatemo_main -->
+	</div>
+	<!-- END of templatemo_wrapper -->
+	<div id="templatemo_bottom_wrapper">
+		<div id="templatemo_bottom">
+			<div class="col one_fourth">
+				<h4>Market Place</h4>
+				<ul class="no_bullet">
+					<li><span class="header"> <a
+							href="board.html?kind=trade">중고거래</a>
+					</span>
+						<p>각종 중고 물품 사고 팔기가 가능합니다.</p></li>
+					<li><span class="header"> <a href="board.html?kind=ad">원룸광고</a>
+					</span>
+						<p>건물주분들의 원룸광고를 지원해주며, 학생분들은 원룸 정보를 알아 볼 수 있습니다.</p></li>
+					<li><span class="header"> <a
+							href="board.html?kind=nanum">무료나눔</a>
+					</span>
+						<p>아름다운 나눔을 실천해보세요.</p></li>
+					<li><span class="header"> <a
+							href="board.html?kind=report">사건/사고 신고</a>
+					</span>
+						<p>거래 중의 각종 사고를 신고할 수 있습니다. 불량 이용자는 블랙리스트에 등록됩니다.</p></li>
+				</ul>
+			</div>
+			<div class="col one_fourth">
+				<h4>Board</h4>
+				<ul class="no_bullet">
+					<li><span class="header"> <a
+							href="board.html?kind=free">자유게시판</a>
+					</span>
+						<p>모든 이용자들이 자유롭게 대화할 수 있는 게시판 입니다.</p></li>
+					<li><span class="header"> <a
+							href="board.html?kind=none">익명게시판</a>
+					</span>
+						<p>무엇이든 터놓고 이야기 할 수 있는 게시판입니다.</p></li>
+					<li><span class="header"> <a
+							href="board.html?kind=major">학과별 게시판</a>
+					</span>
+						<p>각 학과별 전용 게시판을 지원해드립니다.</p></li>
+				</ul>
+			</div>
+			<div class="col one_fourth">
+				<h4>Photo Gallery</h4>
+				<ul class="footer_gallery">
+					<li><a href="images/gallery/01.jpg" rel="lightbox[portfolio]">
+							<img src="images/gallery/01.jpg" alt="image 6" />
+					</a></li>
+					<li><a href="images/gallery/02.jpg" rel="lightbox[portfolio]">
+							<img src="images/gallery/02.jpg" alt="image 7" />
+					</a></li>
+					<li><a href="images/gallery/03.jpg" rel="lightbox[portfolio]">
+							<img src="images/gallery/03.jpg" alt="image 8" />
+					</a></li>
+					<li><a href="images/gallery/04.jpg" rel="lightbox[portfolio]">
+							<img src="images/gallery/04.jpg" alt="image 9" />
+					</a></li>
+					<li><a href="images/gallery/05.jpg" rel="lightbox[portfolio]">
+							<img src="images/gallery/05.jpg" alt="image 10" />
+					</a></li>
+					<li><a href="images/gallery/06.jpg" rel="lightbox[portfolio]">
+							<img src="images/gallery/06.jpg" alt="image 11" />
+					</a></li>
+					<li><a href="images/gallery/07.jpg" rel="lightbox[portfolio]">
+							<img src="images/gallery/07.jpg" alt="image 12" />
+					</a></li>
+					<li><a href="images/gallery/08.jpg" rel="lightbox[portfolio]">
+							<img src="images/gallery/08.jpg" alt="image 13" />
+					</a></li>
+					<li><a href="images/gallery/09.jpg" rel="lightbox[portfolio]">
+							<img src="images/gallery/09.jpg" alt="image 14" />
+					</a></li>
+				</ul>
+				<div class="clear"></div>
+				<a href="gallery.html" class="more">more</a>
+			</div>
+			<div class="col one_fourth no_margin_right">
+				<h4>Blog & Contact</h4>
+				<ul class="no_bullet">
+					<li><span class="header"> <a href="blog.html">Blog</a>
+					</span>
+						<p>관리자 전용 블로그입니다. 일상생활, 유용한정보 등 다양한 포스팅을 열람하실 수 있습니다.</p></li>
+					<li><span class="header"> <a href="contact.html">Contact</a>
+					</span>
+						<p>사이트 이용 중 불편한 사항을 관리자에게 문의 할 수 있습니다.</p></li>
+				</ul>
+			</div>
+
+			<div class="clear"></div>
+		</div>
+		<!-- END of templatemo_bottom -->
+	</div>
+	<!-- END of templatemo_bottom_wrapper -->
+	<div id="templatemo_footer_wrapper">
+		<div id="templatemo_footer">
+			<p>
+				Copyright © 2014 All rights reserved by <a href="">Jeon
+					Young-Hyeon</a>.<br /> 이 웹페이지는 <a
+					href="https://www.google.com/intl/ko/chrome/browser/features.html">Chrome</a>
+				브라우저에 최적화 되어 있습니다.
+			</p>
+			</p>
+		</div>
+		<!-- END of templatemo_footer -->
+	</div>
+	<!-- END of templatemo_footer_wrapper -->
+</body>
+</html>

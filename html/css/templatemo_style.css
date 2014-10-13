@@ -4,7 +4,6 @@
 Titanium Template 
 http://www.templatemo.com/preview/templatemo_372_titanium 
 */
-
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
 
 body {
@@ -26,7 +25,6 @@ h1, h2, h3, h4, h5, h6 {
 	padding: 0;
 	margin: 0;
 	font-family: 'Nanum Gothic', serif;
-	
 }
 
 h1 {
@@ -101,15 +99,15 @@ img {
 	z-index: 10;
 }
 
-img.hot_label{
+img.hot_label {
 	z-index: 11;
 }
 
-img.hot{
+img.hot {
 	height: 80px;
 }
 
-.img_frame img.hot{
+.img_frame img.hot {
 	height: 108px;
 	width: 203px;
 }
@@ -241,8 +239,8 @@ p {
 
 .half {
 	width: 465px;
-	margin-bottom: 30px;	
-	font-size : 12px;
+	margin-bottom: 30px;
+	font-size: 12px;
 	font-family: 'Nanum Gothic', serif;
 }
 
@@ -342,10 +340,10 @@ a.header {
 
 #site_title {
 	float: left;
-	margin-top: 10px;
+	margin-top: 20px;
 }
 
-#site_title img{
+#site_title img {
 	max-height: 90px;
 }
 
@@ -486,8 +484,8 @@ a.header {
 	border: 1px solid #cccccc;
 	display: block;
 	margin-top: 5px;
-	width: 360px;
-	height: 150px;
+	width: 620px;
+	height: 50px;
 	padding: 5px;
 	color: #555555;
 	font-family: Verdana, Arial, Helvetica, sans-serif;
@@ -533,7 +531,7 @@ a.header {
 
 #gallery .gallery_box {
 	padding-bottom: 30px;
-	margin-bottom: 30px
+	margin-bottom: 0px
 }
 
 #contact_form {
@@ -594,9 +592,9 @@ a.header {
 	list-style: none;
 }
 
-.footer_gallery img{
+.footer_gallery img {
 	width: 58px;
-	height: 58px;	
+	height: 58px;
 }
 
 .footer_gallery li {
@@ -609,10 +607,9 @@ a.header {
 .pagging {
 	margin: 30px 0px 20px;
 	padding: 0px;
-
 }
 
-.pagging .pg_select{
+.pagging .pg_select {
 	background-color: gray;
 	color: white;
 }
@@ -654,22 +651,55 @@ a.header {
 	background: none
 }
 
-.table_board{
+.table_board {
 	font-size: 12px;
 	width: 950px;
 }
 
-.table_board .tr_board{
+.table_board a{
+	color:black;
+}
+
+.table_board a:HOVER{
+	color:orange;
+	font-weight: bold;
+}
+
+.table_board .tr_board {
 	font-weight: bolder;
-	font-size:13px;
+	font-size: 13px;
 	background-image: url('../images/add/table_mid.gif');
 	text-align: center;
 }
 
-.table_board .tr_board td{
+.table_board .tr_board td {
 	padding: 5px;
 }
 
-.table_board tbody tr td{
+.table_board tbody tr td {
 	padding: 4px;
+}
+
+.border_title {
+	border: 2px solid;
+	border-color: #e5e5e5;
+	height: 40px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	-o-border-radius: 5px;
+	margin-bottom: 20px;
+	
+	font-size: 17px;
+	font-weight: bold;
+	font-family: 'Nanum Gothic', serif;
+	padding: 10px;
+}
+
+.border_title h5 {
+	color: gray;
+}
+
+.hot_a:HOVER h5{
+	color: orange;
 }
