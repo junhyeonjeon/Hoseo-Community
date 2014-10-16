@@ -178,7 +178,6 @@ a:link, a:visited {
 
 a:hover {
 	color: #CC3300;
-	text-decoration: underline
 }
 
 a:hover, a:active {
@@ -663,6 +662,10 @@ a.header {
 .table_board a:HOVER{
 	color:orange;
 	font-weight: bold;
+}
+
+.table_board tr:HOVER{
+	background-color: #CFCCC9;
 }
 
 .table_board .tr_board {

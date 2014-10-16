@@ -44,6 +44,7 @@
 
 <body>
 	<div id="templatemo_wrapper">
+	
 		<!-- Start_header -->
 		<div id="templatemo_header">
 			<div id="site_title">
@@ -51,45 +52,43 @@
 			</div>
 			<div id="templatemo_search">
 				<form action="#" method="get">
-					<input type="text" value="Search..." name="keyword" id="keyword"
-						title="keyword" onfocus="clearText(this)" onblur="clearText(this)"
-						class="txt_field" /> <input type="submit" name="Search" value=""
-						alt="Search" id="searchbutton" title="Search" class="sub_btn" />
+					<input type="text" value="Search..." name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)"	class="txt_field" /> 
+					<input type="submit" name="Search" value=""	alt="Search" id="searchbutton" title="Search" class="sub_btn" />
 				</form>
 			</div>
 		</div>
 		<!-- End_header -->
-
+		
 		<!-- Start Menu -->
 		<div id="templatemo_menu" class="ddsmoothmenu">
 			<ul>
-				<li><a href="index.html">Home</a></li>
+				<li><a href="index.html" class="selected">Home</a></li>
 				<li><a href="board.html?kind=trade">Market Place</a>
 					<ul>
 						<li><a rel="nofollow" href="board.html?kind=trade">중고 거래</a></li>
 						<li><a rel="nofollow" href="board.html?kind=ad">원룸 광고</a></li>
 						<li><a rel="nofollow" href="board.html?kind=nanum">무료 나눔</a></li>
-						<li><a rel="nofollow" href="board.html?kind=report">사건/사고
-								신고</a></li>
-					</ul></li>
+						<li><a rel="nofollow" href="board.html?kind=report">사건/사고 신고</a></li>
+					</ul>
+				</li>
 				<li><a href="board.html?kind=free">Board</a>
 					<ul>
 						<li><a rel="nofollow" href="board.html?kind=free">자유게시판</a></li>
 						<li><a rel="nofollow" href="board.html?kind=none">익명게시판</a></li>
-						<li><a rel="nofollow" href="board.html?kind=major">학과별
-								게시판</a></li>
-					</ul></li>
+						<li><a rel="nofollow" href="board.html?kind=major">학과별 게시판</a></li>
+					</ul>
+				</li>
 				<li><a href="gallery.html">Gallery</a></li>
 				<li><a href="blog.html">Blog</a></li>
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
-
+			
 			<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 			<script src="js/bootstrap.min.js"></script>
-
+						
 			<div align="right">
 				<a href="login.html" class="button button-blue"><span>로그인</span></a>
-				<a href="#" class="button button-blue"><span>회원가입</span></a>
+				<a href="register.html" class="button button-blue"><span>회원가입</span></a>
 			</div>
 			<!-- <div align="right">
 				<div>
@@ -105,7 +104,7 @@
 			
 			<div align="center" class="login_form" style="height: 100%;">
 			    <div class="login_here">
-			    	<label>REGISTER HERE</label>
+			    	<label>JOIN HERE</label>
 			    </div>
 			    <div class="clear h20"></div>
 			    <div style="width: 400px;">
@@ -114,19 +113,19 @@
 							<span class="ps_box int_id">
 								<input type="text" value="" maxlength="12" placeholder="아이디" class="int input_id"/>
 							</span>
-							<div class="error" style="display: block">필수 정보입니다.</div>
+							<div class="error" style="display: none">필수 정보입니다.</div>
 						</div>
 						<div class="join_row">
 							<span class="ps_box int_pass">
 								<input type="password" maxlength="16" placeholder="비밀번호" class="int input_pw"/>
 							</span>
-							<div class="error" style="display: block">필수 정보입니다.</div>
+							<div class="error" style="display: none">필수 정보입니다.</div>
 						</div>
 						<div class="join_row">
 							<span class="ps_box int_pass">
 								<input type="password" maxlength="16" placeholder="비밀번호 재입력" class="int input_pw"/>
 							</span>
-							<div class="error" style="display: block">필수 정보입니다.</div>
+							<div class="error" style="display: none">필수 정보입니다.</div>
 						</div>
 					</div>
 					
@@ -135,7 +134,7 @@
 							<span class="ps_box">
 								<input type="text" maxlength="40" value=""placeholder="이름" class="int"/>
 							</span>
-							<div class="error" style="display: block;">필수 정보입니다.</div>
+							<div class="error" style="display: none;">필수 정보입니다.</div>
 						</div>
 						
 						<div class="join_row join_birthday">
@@ -170,14 +169,14 @@
 									</span>
 								</div>
 							</div>
-							<span class="error" style="display: block;">필수 정보입니다.</span>
+							<span class="error" style="display: none;">필수 정보입니다.</span>
 						</div>
 						
 						<div class="join_row join_email">
 							<span class="ps_box int_email">
 								<input type="email" maxlength="100" value="" placeholder="이메일" class="int">
 							</span>
-							<div class="error" style="display: block">필수 정보입니다.</div>
+							<div class="error" style="display: none">필수 정보입니다.</div>
 						</div>
 					</div>
 					
@@ -189,7 +188,7 @@
 							<span class="ps_box int_mobile"> 
 								<input type="text" maxlength="16" value="" placeholder="휴대전화번호" class="int">
 							</span>
-							<div class="error" style="display: block;">전화번호를 다시 확인해주세요.</div> 
+							<div class="error" style="display: none;">전화번호를 다시 확인해주세요.</div> 
 							<a href="#" class="btn_c btn_mobile_submit">인증</a>
 						</div>
 						
@@ -197,7 +196,7 @@
 							<span class="ps_box int_mobile_certify"> 
 								<input type="text" maxlength="6" value="" placeholder="인증번호" class="int">								
 							</span>
-							<div class="error" style="display: block;">인증번호를 다시 확인해주세요.</div>
+							<div class="error" style="display: none;">인증번호를 다시 확인해주세요.</div>
 							<a href="#" class="btn_c btn_mobile_submit">확인</a>
 						</div>
 					</div>

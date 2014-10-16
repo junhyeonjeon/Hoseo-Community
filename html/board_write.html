@@ -14,6 +14,7 @@
 
 <link rel="stylesheet" href="css/ddsmoothmenu.css" type="text/css" />
 <link rel="stylesheet" href="css/button.css" type="text/css" />
+<link rel="stylesheet" href="css/boardWrite.css" type="text/css" />
 
 <script type="text/javascript" src="js/jquery.min.js"></script>
 <script type="text/javascript" src="js/ddsmoothmenu.js"></script>
@@ -42,6 +43,7 @@
 
 <body>
 	<div id="templatemo_wrapper">
+	
 		<!-- Start_header -->
 		<div id="templatemo_header">
 			<div id="site_title">
@@ -49,45 +51,43 @@
 			</div>
 			<div id="templatemo_search">
 				<form action="#" method="get">
-					<input type="text" value="Search..." name="keyword" id="keyword"
-						title="keyword" onfocus="clearText(this)" onblur="clearText(this)"
-						class="txt_field" /> <input type="submit" name="Search" value=""
-						alt="Search" id="searchbutton" title="Search" class="sub_btn" />
+					<input type="text" value="Search..." name="keyword" id="keyword" title="keyword" onfocus="clearText(this)" onblur="clearText(this)"	class="txt_field" /> 
+					<input type="submit" name="Search" value=""	alt="Search" id="searchbutton" title="Search" class="sub_btn" />
 				</form>
 			</div>
 		</div>
 		<!-- End_header -->
-
+		
 		<!-- Start Menu -->
 		<div id="templatemo_menu" class="ddsmoothmenu">
 			<ul>
-				<li><a href="index.html">Home</a></li>
+				<li><a href="index.html" class="selected">Home</a></li>
 				<li><a href="board.html?kind=trade">Market Place</a>
 					<ul>
 						<li><a rel="nofollow" href="board.html?kind=trade">중고 거래</a></li>
 						<li><a rel="nofollow" href="board.html?kind=ad">원룸 광고</a></li>
 						<li><a rel="nofollow" href="board.html?kind=nanum">무료 나눔</a></li>
-						<li><a rel="nofollow" href="board.html?kind=report">사건/사고
-								신고</a></li>
-					</ul></li>
+						<li><a rel="nofollow" href="board.html?kind=report">사건/사고 신고</a></li>
+					</ul>
+				</li>
 				<li><a href="board.html?kind=free">Board</a>
 					<ul>
 						<li><a rel="nofollow" href="board.html?kind=free">자유게시판</a></li>
 						<li><a rel="nofollow" href="board.html?kind=none">익명게시판</a></li>
-						<li><a rel="nofollow" href="board.html?kind=major">학과별
-								게시판</a></li>
-					</ul></li>
+						<li><a rel="nofollow" href="board.html?kind=major">학과별 게시판</a></li>
+					</ul>
+				</li>
 				<li><a href="gallery.html">Gallery</a></li>
 				<li><a href="blog.html">Blog</a></li>
 				<li><a href="contact.html">Contact</a></li>
 			</ul>
-
+			
 			<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
 			<script src="js/bootstrap.min.js"></script>
-
+						
 			<div align="right">
 				<a href="login.html" class="button button-blue"><span>로그인</span></a>
-				<a href="#" class="button button-blue"><span>회원가입</span></a>
+				<a href="register.html" class="button button-blue"><span>회원가입</span></a>
 			</div>
 			<!-- <div align="right">
 				<div>
@@ -100,7 +100,33 @@
 		<!-- End Menu -->
 
 		<div id="templatemo_main">
-
+			<div class="write">
+				<div class="write_form">
+					<div>
+						<img src="images/add/write_bi.gif" alt="SmartEditor"/>
+						<a href="http://cafe.naver.com/common/editor/editorhelp/intro.jsp" target="_blank">
+							<img src="images/add/btn_help.gif" alt="btn_help"/></a>
+					</div>
+					<div class="clear h20"></div>
+					<ul class="subject">
+						<li>
+							<label class="item">카테고리</label>
+							<div>
+								<select>
+									<option value="1">게시판선택</option>
+									<option>중고 거래</option>
+									<option>원룸 광고</option>
+									<option>무료 나눔</option>
+									<option>사건/사고 신고</option>
+									<option>자유게시판</option>
+									<option>익명게시판</option>
+									<option>학과별 게시판</option>									
+								</select>
+							</div>
+						</li>
+					</ul>
+				</div>				
+			</div>
 			
 		</div>
 		<!-- END of templatemo_main -->
