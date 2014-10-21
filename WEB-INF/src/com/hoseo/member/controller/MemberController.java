@@ -17,7 +17,7 @@ import com.hoseo.member.Interface.IMemberService;
  *   웹서버를 운영해서 사이트 서비스를 하려면 호스팅이 필요하다.
  *   호스팅을 하려면 도메인을 사려면 cafe24, 후이즈 등 호스팅 업체한테 비용을 지불하면된다.
  *   도메인을 사서 호스팅 업체하고 연결시켜야한다.
-*/
+ */
 @Controller
 public class MemberController {
 
@@ -25,18 +25,18 @@ public class MemberController {
 	// setter 대신 @Autowired 를 붙여준다.
 	@Autowired
 	IMemberService service;
-	
+
 	// 회원가입 약관 동의 페이지 이동
 	@RequestMapping(value = "/register")
 	public ModelAndView register() {
 		ModelAndView mv = new ModelAndView();
-		
+
 		mv.setViewName("register");
 		mv.addObject("layout", "index");
-		
+
 		return mv;
 	}
-	
+
 	// 회원가입 페이지 이동
 	@RequestMapping(value = "/register_form")
 	public ModelAndView register_form() {
@@ -47,17 +47,17 @@ public class MemberController {
 
 		return mv;
 	}
-	
+
 	// 가입 성공
 	@RequestMapping(value = "/register_ok")
 	public String register_ok(MemberDto dto) {
 
-		dto.setBirth(dto.getYear()+dto.getMonth()+dto.getDay());
+		dto.setBirth(dto.getYear() + dto.getMonth() + dto.getDay());
 		service.insert(dto);
-		
+
 		return "redirect:index.do";
 	}
-	
+
 	// 로그인 페이지 이동
 	@RequestMapping(value = "/login")
 	public ModelAndView login() {
@@ -68,17 +68,29 @@ public class MemberController {
 
 		return mv;
 	}
-	
+
 	// 로그인 정보 체크
 	@RequestMapping(value = "/login_ok")
 	public ModelAndView login_ok(MemberDto dto) {
 		ModelAndView mv = new ModelAndView();
 
-		service.login(dto);
-		
-		mv.setViewName("index");
-		mv.addObject("layout", "index");
+		mv.setViewName("login_ok");
+		mv.addObject("login_ok", "N");
+		if (service.login(dto)) {
+			mv.addObject("login_ok", "Y");
+			mv.addObject("userid", dto.getUserid());
+		}
 
 		return mv;
-	}		
+	}
+
+	// 로그아웃
+	@RequestMapping(value = "/logout")
+	public ModelAndView logout() {
+		ModelAndView mv = new ModelAndView();
+
+		mv.setViewName("logout");
+
+		return mv;
+	}
 }

@@ -8,5 +8,5 @@ import com.hoseo.member.MemberDto;
 public interface IMemberService {
 	
 	void insert(MemberDto dto);
-	String login(MemberDto dto);
+	boolean login(MemberDto dto);
 }

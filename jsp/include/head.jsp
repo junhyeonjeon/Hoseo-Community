@@ -37,3 +37,4 @@
 	
 	<link rel="stylesheet" href="<%=commonURL%>/jsp/css/slimbox2.css" type="text/css" media="screen" />
 	<script type="text/JavaScript" src="<%=commonURL%>/jsp/js/slimbox2.js"></script>
+	<script type="text/JavaScript" src="<%=commonURL%>/jsp/js/member.js"></script>

@@ -1,5 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 
+<%
+	String userid = (String) session.getAttribute("userid");
+	System.out.println("세션 : " + userid);
+%>
 <!-- Start_header -->
 		<div id="templatemo_header">
 			<a href="<%=commonURL%>/index.do">
@@ -47,17 +51,23 @@
 			
 			<script type="text/javascript" src="<%=commonURL%>/jsp/js/jquery-1.11.0.js"></script>
 			<script src="<%=commonURL%>/jsp/js/bootstrap.min.js"></script>
-						
+
+			<% if(userid!=null && !userid.equals("")){ %>
+			<div align="right">
+				<div>
+					<a href="#"><%=userid%>&nbsp;님</a>&nbsp;&nbsp;&nbsp; 
+					<a href="#">새쪽지 0</a>&nbsp;&nbsp;&nbsp;
+					<a href="<%=commonURL%>/logout.do" class="button button-blue"><span>로그아웃</span></a>
+				</div>
+			</div>
+			<% } else { %>						
 			<div align="right">
 				<a href="<%=commonURL%>/login.do" class="button button-blue"><span>로그인</span></a>
 				<a href="<%=commonURL%>/register.do" class="button button-blue"><span>회원가입</span></a>
 			</div>
-			<!-- <div align="right">
-				<div>
-					<a>admin</a> 새쪽지 0
-				</div>
-				로그아웃
-			</div> -->
+			<%} %>
+			
+			
 			<br style="clear: left" />
 		</div>
 		<!-- End Menu -->

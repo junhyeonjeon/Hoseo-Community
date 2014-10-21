@@ -43,6 +43,18 @@
 		)
 	</insert>
 	
-	<select id=""></select>
+	<!-- 로그인 아이디 체크 -->
+	<select id="Member.login_id" parameterClass="MemberDto" resultClass="int">
+		select count(*)
+		from member
+		where userid = #userid#
+	</select>
+	
+	<!-- 로그인 비밀번호 체크 -->
+	<select id="Member.login" parameterClass="MemberDto" resultClass="String">
+		select password
+		from member
+		where userid = #userid#
+	</select>
 
 </sqlMap>

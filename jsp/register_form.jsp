@@ -126,8 +126,5 @@
 	
 	<!-- footer -->
 	<%@include file="./include/footer.jsp" %>
-	
-	<!-- script -->
-	<script src="<%=commonURL%>/jsp/js/member.js" type="text/javascript"></script>
 </body>
 </html>

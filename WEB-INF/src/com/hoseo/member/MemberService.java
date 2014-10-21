@@ -19,7 +19,7 @@ public class MemberService implements IMemberService{
 	}
 
 	@Override
-	public String login(MemberDto dto) {
+	public boolean login(MemberDto dto) {
 		return dao.login(dto);
 	}
 }

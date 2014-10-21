@@ -32,19 +32,26 @@ public class MemberDao implements IMemberDao {
 	
 	// 로그인
 	@Override
-	public String login(MemberDto dto) {
+	public boolean login(MemberDto dto) {
 
-		String userid = "";
-
+		String pw = "";
+		
 		try {
-			userid = (String) sm.queryForObject("Member.login", dto);
+			if((Integer)sm.queryForObject("Member.login_id", dto) == 0){
+				return false;
+			}else{
+				pw = (String) sm.queryForObject("Member.login", dto);
+			}
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-
-		return userid;
-	}
-	
+		
+		if(pw.equals(dto.getPw1()))
+			return true;
+		else
+			return false;
+		
+	}	
 	
 	// 아이디 중복 체크
 	public boolean isExist(String sql) {
