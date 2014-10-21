@@ -17,4 +17,9 @@ public class MemberService implements IMemberService{
 	public void insert(MemberDto dto) {
 		dao.insert(dto);		
 	}
+
+	@Override
+	public String login(MemberDto dto) {
+		return dao.login(dto);
+	}
 }

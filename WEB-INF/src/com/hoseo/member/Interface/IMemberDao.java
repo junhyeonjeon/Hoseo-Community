@@ -8,4 +8,5 @@ public interface IMemberDao {
 	
 	void insert(MemberDto dto);
 	boolean isExist(String sql);
+	String login(MemberDto dto);
 }

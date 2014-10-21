@@ -8,7 +8,7 @@
 	<typeAlias alias="BoardDto" type="com.hoseo.board.BoardDto" />
 	<typeAlias alias="MemberDto" type="com.hoseo.member.MemberDto" />
 
-	<!-- Insert example -->
+	<!-- 회원 추가 -->
 	<insert id="Member.insert" parameterClass="MemberDto">
 		<!--자동으로 seq 증가 -->
 		<selectKey resultClass="int" keyProperty="seq">
@@ -42,5 +42,7 @@
 		,'N'
 		)
 	</insert>
+	
+	<select id=""></select>
 
 </sqlMap>

@@ -1,0 +1,567 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Hoseo Community</title>
+<meta name="keywords" content="" />
+<meta name="description" content="" />
+<link rel="stylesheet" href="css/templatemo_style.css" type="text/css" />
+
+<link rel="stylesheet" href="css/orman.css" type="text/css"
+	media="screen" />
+<link rel="stylesheet" href="css/nivo-slider.css" type="text/css"
+	media="screen" />
+
+<link rel="stylesheet" href="css/ddsmoothmenu.css" type="text/css" />
+<link rel="stylesheet" href="css/button.css" type="text/css" />
+
+<script type="text/javascript" src="js/jquery.min.js"></script>
+<script type="text/javascript" src="js/ddsmoothmenu.js"></script>
+
+<script language="javascript" type="text/javascript">
+	ddsmoothmenu.init({
+		mainmenuid : "templatemo_menu", //menu DIV id
+		orientation : 'h', //Horizontal or vertical menu: Set to "h" or "v"
+		classname : 'ddsmoothmenu', //class added to menu's outer DIV
+		//customtheme: ["#1c5a80", "#18374a"],
+		contentsource : "markup" //"markup" or ["container_id", "path_to_menu_file"]
+	})
+
+	function clearText(field) {
+		if (field.defaultValue == field.value)
+			field.value = '';
+		else if (field.value == '')
+			field.value = field.defaultValue;
+	}
+</script>
+
+<link rel="stylesheet" href="css/slimbox2.css" type="text/css"
+	media="screen" />
+
+<script type="text/JavaScript" src="js/slimbox2.js"></script>
+<style type="text/css">
+ul, li, a {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #fff
+}
+
+li {
+	list-style: none;
+	text-align: center;
+}
+
+#t {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	height: 300px;
+	margin: 0 auto;
+	background: #DFF;
+}
+
+#t ul {
+	overflow: hidden;
+	width: 325%;
+	position: absolute;
+	top: 25px;
+	left: -20%
+}
+
+#t li {
+	width: 220px;
+	height: 250px;
+	background: cornsilk;
+	float: left;
+	margin-left: 22px;
+	line-height: 3;
+}
+
+#t li:first-child {
+	margin-left: 0;
+}
+
+.btns {
+	width: 100%;
+	margin: 20px auto;
+	text-align: center
+}
+</style>
+<script
+	src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<script type="text/javascript">
+	$(function() {
+		var li_ele = $("#t li");
+		var li_w = $("#t li").width() + 22;
+		var leftGo = "-=";
+		var rightGo = "+="
+		var infinite;
+		var rolling;
+		//auto play
+		function loopObj(behavior) {
+			infinite = setInterval(function() {
+				$("#t ul").animate({
+					left : behavior + li_w,
+				}, "slow", function() {
+					var frst = $("#t ul li:first-child")
+					$("#t ul").append(frst)
+					$("#t ul").css("left", "-20%");
+				});
+			}, 1000);
+		}
+		function loopObj2(behavior, btns) {
+			rolling = setTimeout(function() {
+				$("#t ul").animate({
+					left : behavior + li_w,
+				}, "fast", function() {
+					var frst = $("#t ul li:first-child");
+					var last = $("#t ul li:last-child");
+					if (btns == "next") {
+						$("#t ul").append(frst)
+					}
+					if (btns == "prev") {
+						$("#t ul").prepend(last)
+					}
+					$("#t ul").css("left", "-20%");
+				});
+			}, 100);
+		}
+		loopObj(leftGo)
+		//custom play
+		$("button").click(function() {
+			var btns = $(this).text();
+			switch (btns) {
+			case "prev":
+				clearInterval(infinite);
+				loopObj2(rightGo, btns);
+				break;
+			case "next":
+				clearInterval(infinite);
+				loopObj2(leftGo, btns);
+				break;
+			case "auto":
+				clearInterval(infinite);
+				loopObj(leftGo);
+				break;
+			case "stop":
+				clearInterval(infinite);
+				break;
+			}
+		})
+	})
+</script>
+</head>
+
+<body>
+	<div id="templatemo_wrapper">
+
+		<!-- Start_header -->
+		<div id="templatemo_header">
+			<div id="site_title">
+				<img src="./images/add/intro_tex02.jpg" alt="Venture1st_호서대학교" />
+			</div>
+			<div id="templatemo_search">
+				<form action="#" method="get">
+					<input type="text" value="Search..." name="keyword" id="keyword"
+						title="keyword" onfocus="clearText(this)" onblur="clearText(this)"
+						class="txt_field" /> <input type="submit" name="Search" value=""
+						alt="Search" id="searchbutton" title="Search" class="sub_btn" />
+				</form>
+			</div>
+		</div>
+		<!-- End_header -->
+
+		<!-- Start Menu -->
+		<div id="templatemo_menu" class="ddsmoothmenu">
+			<ul>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="board.html?kind=trade" class="selected">Market
+						Place</a>
+					<ul>
+						<li><a rel="nofollow" href="board.html?kind=trade">중고 거래</a></li>
+						<li><a rel="nofollow" href="board.html?kind=ad">원룸 광고</a></li>
+						<li><a rel="nofollow" href="board.html?kind=nanum">무료 나눔</a></li>
+						<li><a rel="nofollow" href="board.html?kind=report">사건/사고
+								신고</a></li>
+					</ul></li>
+				<li><a href="board.html?kind=free" class="selected">Board</a>
+					<ul>
+						<li><a rel="nofollow" href="board.html?kind=free">자유게시판</a></li>
+						<li><a rel="nofollow" href="board.html?kind=none">익명게시판</a></li>
+						<li><a rel="nofollow" href="board.html?kind=major">학과별
+								게시판</a></li>
+					</ul></li>
+				<li><a href="gallery.html">Gallery</a></li>
+				<li><a href="blog.html">Blog</a></li>
+				<li><a href="contact.html">Contact</a></li>
+			</ul>
+
+			<script type="text/javascript" src="js/jquery-1.11.0.js"></script>
+			<script src="js/bootstrap.min.js"></script>
+
+			<div align="right">
+				<a href="login.html" class="button button-blue"><span>로그인</span></a>
+				<a href="register.html" class="button button-blue"><span>회원가입</span></a>
+			</div>
+			<!-- <div align="right">
+				<div>
+					<a>admin</a> 새쪽지 0
+				</div>
+				로그아웃
+			</div> -->
+			<br style="clear: left" />
+		</div>
+		<!-- End Menu -->
+
+
+
+
+
+		<div id="templatemo_main">
+			<div class="border_title">
+				<h5>
+					게시판 제목 <small>- 간단한 게시판 소개글</small>
+				</h5>
+			</div>
+			<div id="gallery">
+				<div id="t">
+					<ul style="left: -256.777450043915px;">
+						<li><div class="col one_fourth gallery_box">
+								<div class="img_frame img_frame_14 img_nom">
+									<span></span> <a href="images/portfolio/01.jpg"
+										rel="lightbox[new_gallery]"> <img class="hot_label"
+										src="images/add/icon_hot.png" /> <img class="hot"
+										src="images/portfolio/01.jpg" alt="Gallery Item 1" />
+									</a>
+
+								</div>
+								<a class="hot_a" href="boardView.html?kind=trade&num=1"><h5>중고
+										책 팝니다</h5></a>
+								<div style="float: left">userid</div>
+								<div style="float: right">2014-10-10</div>
+								<a href="#" class="more">MORE</a>
+							</div></li>
+						<li>
+							<div class="col one_fourth gallery_box">
+								<div class="img_frame img_frame_14 img_nom">
+									<span></span> <a href="images/portfolio/02.jpg"
+										rel="lightbox[new_gallery]"> <img class="hot_label"
+										src="images/add/icon_hot.png" /> <img class="hot"
+										src="images/portfolio/02.jpg" alt="Gallery Item 2" />
+									</a>
+								</div>
+								<a class="hot_a" href="boardView.html?kind=trade&num=1"><h5>중고
+										스마트폰 팝니다</h5></a>
+								<div style="float: left">userid</div>
+								<div style="float: right">2014-10-10</div>
+								<a href="#" class="more">MORE</a>
+							</div>
+						</li>
+						<li><div class="col one_fourth gallery_box">
+								<div class="img_frame img_frame_14 img_nom">
+									<span></span> <a href="images/portfolio/03.jpg"
+										rel="lightbox[new_gallery]"> <img class="hot_label"
+										src="images/add/icon_hot.png" /> <img class="hot"
+										src="images/portfolio/03.jpg" alt="Gallery Item 3" />
+									</a>
+								</div>
+								<a class="hot_a" href="boardView.html?kind=trade&num=1"><h5>중고
+										자전거 팝니다</h5></a>
+								<div style="float: left">userid</div>
+								<div style="float: right">2014-10-10</div>
+								<a href="#" class="more">MORE</a>
+							</div></li>
+						<li><div class="col one_fourth gallery_box no_margin_right">
+								<div class="img_frame img_frame_14 img_nom">
+									<span></span> <a href="images/portfolio/04.jpg"
+										rel="lightbox[new_gallery]"> <img class="hot_label"
+										src="images/add/icon_hot.png" /> <img class="hot"
+										src="images/portfolio/04.jpg" alt="Gallery Item 4" />
+									</a>
+								</div>
+								<a class="hot_a" href="boardView.html?kind=trade&num=1"><h5>바이크
+										싸게 드립니다</h5></a>
+								<div style="float: left">userid</div>
+								<div style="float: right">2014-10-10</div>
+								<a href="#" class="more">MORE</a>
+							</div></li>
+
+						<li>추가 할꺼1</li>
+						<li>2</li>
+						<li>3
+							<li>
+						<li>4</a></li>
+						<li><a href="#">5</a></li>
+						<li><a href="#">6</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="btns">
+				<button type="button">이전</button>
+				<button type="button">다음</button>
+				<button type="button">자동보기</button>
+				<button type="button">멈추기</button>
+			</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<div>
+				<table class="table_board" cellpadding="0" cellspacing="0"
+					border="0">
+					<colgroup>
+						<col width="60" />
+						<col width="*" />
+						<col width="130" />
+						<col width="100" />
+						<col width="70" />
+						<col width="70" />
+					</colgroup>
+					<thead>
+						<tr class="tr_board">
+							<td></td>
+							<td>제목</td>
+							<td>작성자</td>
+							<td>작성일</td>
+							<td>조회</td>
+							<td>추천</td>
+						</tr>
+					</thead>
+					<tbody>
+						<tr>
+							<td align="center">1</td>
+							<td align="left"><a href="#">제목</a></td>
+							<td align="center"><a href="#">userid</a></td>
+							<td align="center">2014-08-16</td>
+							<td align="center">30</td>
+							<td align="center">0</td>
+						</tr>
+						<tr>
+							<td align="center">2</td>
+							<td align="left"><a href="#">제목</a></td>
+							<td align="center"><a href="#">userid</a></td>
+							<td align="center">2014-08-16</td>
+							<td align="center">30</td>
+							<td align="center">0</td>
+						</tr>
+						<tr>
+							<td align="center">3</td>
+							<td align="left"><a href="#">제목</a></td>
+							<td align="center"><a href="#">userid</a></td>
+							<td align="center">2014-08-16</td>
+							<td align="center">30</td>
+							<td align="center">0</td>
+						</tr>
+						<tr>
+							<td align="center">4</td>
+							<td align="left"><a href="#">제목</a></td>
+							<td align="center"><a href="#">userid</a></td>
+							<td align="center">2014-08-16</td>
+							<td align="center">30</td>
+							<td align="center">0</td>
+						</tr>
+						<tr>
+							<td align="center">5</td>
+							<td align="left"><a href="#">제목</a></td>
+							<td align="center"><a href="#">userid</a></td>
+							<td align="center">2014-08-16</td>
+							<td align="center">30</td>
+							<td align="center">0</td>
+						</tr>
+						<tr>
+							<td align="center">6</td>
+							<td align="left"><a href="#">제목</a></td>
+							<td align="center"><a href="#">userid</a></td>
+							<td align="center">2014-08-16</td>
+							<td align="center">30</td>
+							<td align="center">0</td>
+						</tr>
+						<tr>
+							<td align="center">7</td>
+							<td align="left"><a href="#">제목</a></td>
+							<td align="center"><a href="#">userid</a></td>
+							<td align="center">2014-08-16</td>
+							<td align="center">30</td>
+							<td align="center">0</td>
+						</tr>
+						<tr>
+							<td align="center">8</td>
+							<td align="left"><a href="#">제목</a></td>
+							<td align="center"><a href="#">userid</a></td>
+							<td align="center">2014-08-16</td>
+							<td align="center">30</td>
+							<td align="center">0</td>
+						</tr>
+						<tr>
+							<td align="center">9</td>
+							<td align="left"><a href="#">제목</a></td>
+							<td align="center"><a href="#">userid</a></td>
+							<td align="center">2014-08-16</td>
+							<td align="center">30</td>
+							<td align="center">0</td>
+						</tr>
+						<tr>
+							<td align="center">10</td>
+							<td align="left"><a href="#">제목</a></td>
+							<td align="center"><a href="#">userid</a></td>
+							<td align="center">2014-08-16</td>
+							<td align="center">30</td>
+							<td align="center">0</td>
+						</tr>
+
+					</tbody>
+				</table>
+			</div>
+
+			<div class="clear"></div>
+			<div class="pagging">
+				<ul>
+					<li><a href="#">Previous</a></li>
+					<li><a href="#" class="pg_select">1</a></li>
+					<li><a href="#">2</a></li>
+					<li><a href="#">3</a></li>
+					<li><a href="#">4</a></li>
+					<li><a href="#">5</a></li>
+					<li><a href="#">6</a></li>
+					<li><a href="#">7</a></li>
+					<li><a href="#">8</a></li>
+					<li><a href="#">Next</a></li>
+				</ul>
+				<div align="right">
+					<select>
+						<option>전체</option>
+						<option>제목</option>
+						<option>내용</option>
+						<option>작성자</option>
+					</select> <input type="text" name="search" /> <a href="#"
+						class="button button-search"><span class="btn-board">Search</span></a>
+					&nbsp; <a href="board_write.html"
+						class="button btn-board button-search"><span class="btn-board">Write</span></a>
+				</div>
+			</div>
+			<div class="clear"></div>
+
+			<div class="clear"></div>
+		</div>
+		<!-- END of templatemo_main -->
+	</div>
+	<!-- END of templatemo_wrapper -->
+
+	<div id="templatemo_bottom_wrapper">
+		<div id="templatemo_bottom">
+			<div class="col one_fourth">
+				<h4>Market Place</h4>
+				<ul class="no_bullet">
+					<li><span class="header"> <a
+							href="board.html?kind=trade">중고거래</a>
+					</span>
+						<p>각종 중고 물품 사고 팔기가 가능합니다.</p></li>
+					<li><span class="header"> <a href="board.html?kind=ad">원룸광고</a>
+					</span>
+						<p>건물주분들의 원룸광고를 지원해주며, 학생분들은 원룸 정보를 알아 볼 수 있습니다.</p></li>
+					<li><span class="header"> <a
+							href="board.html?kind=nanum">무료나눔</a>
+					</span>
+						<p>아름다운 나눔을 실천해보세요.</p></li>
+					<li><span class="header"> <a
+							href="board.html?kind=report">사건/사고 신고</a>
+					</span>
+						<p>거래 중의 각종 사고를 신고할 수 있습니다. 불량 이용자는 블랙리스트에 등록됩니다.</p></li>
+				</ul>
+			</div>
+			<div class="col one_fourth">
+				<h4>Board</h4>
+				<ul class="no_bullet">
+					<li><span class="header"> <a
+							href="board.html?kind=free">자유게시판</a>
+					</span>
+						<p>모든 이용자들이 자유롭게 대화할 수 있는 게시판 입니다.</p></li>
+					<li><span class="header"> <a
+							href="board.html?kind=none">익명게시판</a>
+					</span>
+						<p>무엇이든 터놓고 이야기 할 수 있는 게시판입니다.</p></li>
+					<li><span class="header"> <a
+							href="board.html?kind=major">학과별 게시판</a>
+					</span>
+						<p>각 학과별 전용 게시판을 지원해드립니다.</p></li>
+				</ul>
+			</div>
+			<div class="col one_fourth">
+				<h4>Photo Gallery</h4>
+				<ul class="footer_gallery">
+					<li><a href="images/gallery/01.jpg" rel="lightbox[portfolio]">
+							<img src="images/gallery/01.jpg" alt="image 6" />
+					</a></li>
+					<li><a href="images/gallery/02.jpg" rel="lightbox[portfolio]">
+							<img src="images/gallery/02.jpg" alt="image 7" />
+					</a></li>
+					<li><a href="images/gallery/03.jpg" rel="lightbox[portfolio]">
+							<img src="images/gallery/03.jpg" alt="image 8" />
+					</a></li>
+					<li><a href="images/gallery/04.jpg" rel="lightbox[portfolio]">
+							<img src="images/gallery/04.jpg" alt="image 9" />
+					</a></li>
+					<li><a href="images/gallery/05.jpg" rel="lightbox[portfolio]">
+							<img src="images/gallery/05.jpg" alt="image 10" />
+					</a></li>
+					<li><a href="images/gallery/06.jpg" rel="lightbox[portfolio]">
+							<img src="images/gallery/06.jpg" alt="image 11" />
+					</a></li>
+					<li><a href="images/gallery/07.jpg" rel="lightbox[portfolio]">
+							<img src="images/gallery/07.jpg" alt="image 12" />
+					</a></li>
+					<li><a href="images/gallery/08.jpg" rel="lightbox[portfolio]">
+							<img src="images/gallery/08.jpg" alt="image 13" />
+					</a></li>
+					<li><a href="images/gallery/09.jpg" rel="lightbox[portfolio]">
+							<img src="images/gallery/09.jpg" alt="image 14" />
+					</a></li>
+				</ul>
+				<div class="clear"></div>
+				<a href="gallery.html" class="more">more</a>
+			</div>
+			<div class="col one_fourth no_margin_right">
+				<h4>Blog & Contact</h4>
+				<ul class="no_bullet">
+					<li><span class="header"> <a href="blog.html">Blog</a>
+					</span>
+						<p>관리자 전용 블로그입니다. 일상생활, 유용한정보 등 다양한 포스팅을 열람하실 수 있습니다.</p></li>
+					<li><span class="header"> <a href="contact.html">Contact</a>
+					</span>
+						<p>사이트 이용 중 불편한 사항을 관리자에게 문의 할 수 있습니다.</p></li>
+				</ul>
+			</div>
+
+			<div class="clear"></div>
+		</div>
+		<!-- END of templatemo_bottom -->
+	</div>
+	<!-- END of templatemo_bottom_wrapper -->
+	<div id="templatemo_footer_wrapper">
+		<div id="templatemo_footer">
+			<p>
+				Copyright © 2014 All rights reserved by <a href="">Jeon
+					Young-Hyeon</a>.<br /> 이 웹페이지는 <a
+					href="https://www.google.com/intl/ko/chrome/browser/features.html">Chrome</a>
+				브라우저에 최적화 되어 있습니다.
+			</p>
+			</p>
+		</div>
+		<!-- END of templatemo_footer -->
+	</div>
+	<!-- END of templatemo_footer_wrapper -->
+</body>
+</html>

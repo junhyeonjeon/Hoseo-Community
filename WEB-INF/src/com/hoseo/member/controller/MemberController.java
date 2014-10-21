@@ -58,6 +58,27 @@ public class MemberController {
 		return "redirect:index.do";
 	}
 	
-	// 로그인
+	// 로그인 페이지 이동
+	@RequestMapping(value = "/login")
+	public ModelAndView login() {
+		ModelAndView mv = new ModelAndView();
+
+		mv.setViewName("login");
+		mv.addObject("layout", "index");
+
+		return mv;
+	}
 	
+	// 로그인 정보 체크
+	@RequestMapping(value = "/login_ok")
+	public ModelAndView login_ok(MemberDto dto) {
+		ModelAndView mv = new ModelAndView();
+
+		service.login(dto);
+		
+		mv.setViewName("index");
+		mv.addObject("layout", "index");
+
+		return mv;
+	}		
 }

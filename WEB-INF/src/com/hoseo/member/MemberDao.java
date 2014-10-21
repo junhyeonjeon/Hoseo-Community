@@ -20,6 +20,7 @@ public class MemberDao implements IMemberDao {
 	@Autowired
 	SqlMapClientTemplate sm;
 	
+	// 회원 가입
 	@Override
 	public void insert(MemberDto dto) {
 		try {
@@ -28,6 +29,22 @@ public class MemberDao implements IMemberDao {
 			e.printStackTrace();
 		}
 	}
+	
+	// 로그인
+	@Override
+	public String login(MemberDto dto) {
+
+		String userid = "";
+
+		try {
+			userid = (String) sm.queryForObject("Member.login", dto);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		return userid;
+	}
+	
 	
 	// 아이디 중복 체크
 	public boolean isExist(String sql) {

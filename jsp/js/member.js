@@ -16,8 +16,7 @@ function login(){
 		return;
 	}
 	
-	frm.submit();
-	
+	frm.submit();	
 }
 
 //약관 동의 체크
@@ -242,3 +241,4 @@ function register_ok(){
 	frm.action = "./register_ok.do";
 	frm.submit();
 }
+
