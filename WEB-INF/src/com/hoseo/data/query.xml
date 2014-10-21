@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="query">
+	<typeAlias alias="BoardDto" type="com.hoseo.board.BoardDto" />
+	<typeAlias alias="MemberDto" type="com.hoseo.member.MemberDto" />
+
+	<!-- Insert example -->
+	<insert id="Member.insert" parameterClass="MemberDto">
+		<!--자동으로 seq 증가 -->
+		<selectKey resultClass="int" keyProperty="seq">
+			select
+			nvl(max(seq)+1, 1) from member
+		</selectKey>
+		insert into member
+		(
+		seq
+		,userid
+		,password
+		,username
+		,birth
+		,email
+		,phone
+		,wdate
+		,mdate
+		,delyn
+		)
+		values
+		(
+		#seq#
+		,#userid#
+		,#pw1#
+		,#username#
+		,#birth#
+		,#email#
+		,#phone#
+		,sysdate
+		,sysdate
+		,'N'
+		)
+	</insert>
+
+</sqlMap>
