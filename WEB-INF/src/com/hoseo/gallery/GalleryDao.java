@@ -25,7 +25,7 @@ public class GalleryDao implements IGalleryDao {
 			list = sm.queryForList("Gallery.getlist", pg);
 		}catch(Exception e){
 			e.printStackTrace();
-		}		
+		}	
 		
 		return list;
 	}

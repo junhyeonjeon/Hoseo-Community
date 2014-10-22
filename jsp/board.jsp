@@ -14,9 +14,9 @@
 
 		<div id="templatemo_main">
 			<div class="border_title">
-				<h5>
-					게시판 제목 <small>- 간단한 게시판 소개글</small>
-				</h5>
+				<h4 style="text-align: center;">
+					중고 거래 게시판
+				</h4>
 			</div>			
 			
 			<div id="gallery" class="pl3">

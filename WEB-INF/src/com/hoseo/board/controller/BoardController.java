@@ -5,6 +5,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import com.hoseo.board.BoardDto;
 import com.hoseo.board.Interface.IBoardService;
 
 //컨트롤러 파일의 경우 @Controller이 있어야 한다.
@@ -43,6 +44,17 @@ public class BoardController {
 
 		mv.setViewName("contact");
 		mv.addObject("layout", "contact");
+
+		return mv;
+	}
+	
+	// market 페이지 이동
+	@RequestMapping(value = "/board")
+	public ModelAndView market(BoardDto dto) {
+		ModelAndView mv = new ModelAndView();
+
+		mv.setViewName("board");
+		mv.addObject("layout", "market");
 
 		return mv;
 	}
