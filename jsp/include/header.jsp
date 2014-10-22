@@ -44,7 +44,7 @@
 						<li><a rel="nofollow" href="<%=commonURL%>/board.do?kind=major">학과별 게시판</a></li>
 					</ul>
 				</li>
-				<li><a href="<%=commonURL%>/gallery.do" <%if(layout.equals("gallery")){ %>class="selected"<%} %>>Gallery</a></li>
+				<li><a href="<%=commonURL%>/gallery.do?pg=1" <%if(layout.equals("gallery")){ %>class="selected"<%} %>>Gallery</a></li>
 				<!-- <li><a href="blog.jsp">Blog</a></li> -->
 				<li><a href="<%=commonURL%>/contact.do" <%if(layout.equals("contact")){ %>class="selected"<%} %>>Contact</a></li>
 			</ul>

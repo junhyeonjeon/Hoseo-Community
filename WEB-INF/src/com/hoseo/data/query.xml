@@ -7,6 +7,7 @@
 <sqlMap namespace="query">
 	<typeAlias alias="BoardDto" type="com.hoseo.board.BoardDto" />
 	<typeAlias alias="MemberDto" type="com.hoseo.member.MemberDto" />
+	<typeAlias alias="GalleryDto" type="com.hoseo.gallery.GalleryDto" />
 
 	<!-- 회원 추가 -->
 	<insert id="Member.insert" parameterClass="MemberDto">
@@ -56,5 +57,36 @@
 		from member
 		where userid = #userid#
 	</select>
+	
+	<!-- 갤러리 목록 가져오기 -->
+	<select id="Gallery.getlist" parameterClass="int" resultClass="GalleryDto">
+		select *
+        from gallery
+        where seq between ((#pg#-1)*8)+1 and ((#pg#-1)*8)+8
+        order by seq desc
+	</select>
+	
+	<!-- 갤러리 게시글 총 갯수 -->
+	<select id="Gallery.totalList" resultClass="int">
+		select count(*) from gallery
+	</select>
+	
+	<insert id="Gallery.upload" parameterClass="GalleryDto">
+		<!--자동으로 seq 증가 -->
+		<selectKey resultClass="int" keyProperty="seq">
+			select nvl(max(seq)+1, 1) from gallery
+		</selectKey>
+		
+		insert into gallery(seq, title, contents, url)
+		values(
+			#seq#
+			,#title#
+			,#contents#
+			,
+			<iterate property="filename" conjunction=",">
+				#filename[]#
+			</iterate>
+		)	
+	</insert>
 
 </sqlMap>

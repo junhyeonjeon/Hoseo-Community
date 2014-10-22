@@ -16,4 +16,5 @@ public interface IBoardService {
 	void update(BoardDto dto);
 
 	void delete(BoardDto dto);
+	
 }

@@ -15,28 +15,31 @@
 		<!-- header -->
 		<%@include file="./include/header.jsp" %>
 		
-		<form name="login_form" method="post">
+		<form name="gallery_upload_form" method="post" enctype="multipart/form-data">
 		<div id="templatemo_main">
 			<div class="clear h40"></div>
 				
 			<div align="center" class="login_form">
 			    <div class="login_here">
-			    	<label>LOGIN HERE</label>
+			    	<label>Gallery Upload</label>
 			    </div>
 			    <div align="center" class="login_input">
 			    	<div align="right">
-			    		User ID : <input type="text" name="userid" id="userid"/>
+			    		<input type="text" name="title" id="title" maxlength="40" placeholder="제목" style="width: 238px;"/>
 			    	</div>
 			    	<div class="clear h20"></div>
 			    	<div align="right">
-			    		Password : <input type="password" name="pw1" id="pw1"/>
+			    		<textarea name="contents" id="contents" maxlength="100" placeholder="내용" style="width: 235px; height: 100px;"></textarea>
+			    	</div>
+			    	<div class="clear h20"></div>
+			    	<div align="right">
+			    		<input type="file" name="files[0]" id="files[0]"/>
 			    	</div>
 			    	<div class="clear h20"></div>
 			    </div>
 			    <div align="center">
-			    		<a href="<%=commonURL%>/register.do" class="button button-blue"><span>회원가입</span></a>
-			    		<!-- <a href="#" class="button button-blue" style="width: 100px; padding: 0px;"><span>회원정보 찾기</span></a> -->
-			    		<a href="javascript:login()" class="button button-blue"><span>로그인</span></a>
+			    		<a href="javascript:history.go(-1);" class="button button-blue"><span>돌아가기</span></a>
+			    		<a href="javascript:upload()" class="button button-blue"><span>업로드</span></a>
 			    </div>
 			    <div class="clear h40"></div>
 			</div>
@@ -50,5 +53,8 @@
 	
 	<!-- footer -->
 	<%@include file="./include/footer.jsp" %>
+	
+	<!-- script -->
+	<script type="text/JavaScript" src="<%=commonURL%>/jsp/js/gallery.js"></script>
 </body>
 </html>

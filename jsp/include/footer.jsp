@@ -78,7 +78,7 @@
 					</a></li>
 				</ul>
 				<div class="clear"></div>
-				<a href="<%=commonURL%>/gallery.do" class="more">more</a>
+				<a href="<%=commonURL%>/gallery.do?pg=1" class="more">more</a>
 			</div>			
 			<div class="col one_fourth no_margin_right">
 				<h4>Contact</h4>
