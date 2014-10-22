@@ -33,6 +33,7 @@
 				<div class="nivo-controlNav-bg"></div>
 			</div>
 			
+			깃허브 테스트 입니다.
 			
 			<script type="text/javascript" src="<%=commonURL%>/jsp/js/jquery-1.6.1.min.js"></script>
 			<script type="text/javascript" src="<%=commonURL%>/jsp/js/jquery.nivo.slider.pack.js"></script>
