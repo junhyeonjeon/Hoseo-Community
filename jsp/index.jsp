@@ -10,29 +10,24 @@
 	
 		<!-- header -->
 		<%@include file="./include/header.jsp"%>
-		
+				
 		<!-- Start slider -->
 		<div id="templatemo_slider">
 			<div class="slider-wrapper theme-orman">
 				<div class="ribbon"></div>
 				<div id="slider" class="nivoSlider">
 				<a rel="nofollow" href="http://www.hoseo.ac.kr/CmsHome/intro_00022875.eznic" target="_blank">
-					<img src="<%=commonURL%>/jsp/images/slider/01.jpg" alt="호서대학교" title="Hoseo University"/>
+					<img src="<%=commonURL%>/jsp/images/slider/05.jpg" alt="학교 전경" title="이미지 클릭 시 대학 홈페이지로 이동합니다"/>
 				</a>
 				<a rel="nofollow" href="http://www.hoseo.ac.kr/CmsHome/intro_00022875.eznic" target="_blank">
-					<img src="<%=commonURL%>/jsp/images/slider/02.jpg" alt="교훈 : 하면된다. 할수있다." title="교훈 - 할수있다 하면된다"/>
+					<img src="<%=commonURL%>/jsp/images/slider/02.jpg" alt="교훈 : 하면된다. 할수있다." title="이미지 클릭 시 대학 홈페이지로 이동합니다"/>
 				</a>
 				<a rel="nofollow" href="http://www.hoseo.ac.kr/CmsHome/intro_00022875.eznic" target="_blank">
-					<img src="<%=commonURL%>/jsp/images/slider/03.jpg" alt="중앙도서관과 잔디광장" title="중앙도서관과 잔디광장"/>
+					<img src="<%=commonURL%>/jsp/images/slider/03.jpg" alt="중앙도서관과 잔디광장" title="이미지 클릭 시 대학 홈페이지로 이동합니다"/>
 				</a>
+				
 				<a rel="nofollow" href="http://www.hoseo.ac.kr/CmsHome/intro_00022875.eznic" target="_blank">
-					<img src="<%=commonURL%>/jsp/images/slider/04.jpg" alt="신기술 창업보육센터" title="창업보육센터"/>
-				</a>
-				<a rel="nofollow" href="http://www.hoseo.ac.kr/CmsHome/intro_00022875.eznic" target="_blank">
-					<img src="<%=commonURL%>/jsp/images/slider/05.jpg" alt="학교 전경" title="학교 전경"/>
-				</a>
-				<a rel="nofollow" href="http://www.hoseo.ac.kr/CmsHome/intro_00022875.eznic" target="_blank">
-					<img src="<%=commonURL%>/jsp/images/slider/06.jpg" alt="장영실관" title="장영실관"/>
+					<img src="<%=commonURL%>/jsp/images/slider/06.jpg" alt="장영실관" title="이미지 클릭 시 대학 홈페이지로 이동합니다"/>
 				</a> 
 				</div>
 				<div class="nivo-controlNav-bg"></div>
@@ -44,7 +39,7 @@
 			<script type="text/javascript">
        			$(window).load(function() {
             		$('#slider').nivoSlider({
-						controlNav:false
+						controlNav:true
 					});
         		});
         	</script>
@@ -68,8 +63,8 @@
 				</p>
 				<ul class="list_bullet">
 					<li class="flow">누구든지 가입이 가능합니다</li>
-					<li class="flow">쇼핑몰과 같은 안전한 중고거래가 가능합니다</li>
-					<li class="flow">건물주분들은 자유롭게 원룸 광고가 가능합니다</li>
+					<li class="flow">중고물품 거래가 가능합니다</li>
+					<li class="flow">원룸 광고와 평가가 가능합니다</li>
 					<li class="flow">회원은 모든 게시글에 코멘트가 가능합니다</li>
 					<li class="flow">호서커뮤니티는 학과 전용 게시판을 지원해드립니다</li>
 				</ul>

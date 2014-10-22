@@ -6,10 +6,10 @@
 %>
 <!-- Start_header -->
 		<div id="templatemo_header">
-			<a href="<%=commonURL%>/index.do">
 			<div id="site_title">
-				<img src="<%=commonURL%>/jsp/images/add/intro_tex02.jpg" alt="Venture1st_호서대학교" />
+				<img src="<%=commonURL%>/jsp/images/add/intro_tex02.jpg" alt="Venture1st_호서대학교" onclick="#"/>
 			</div>
+			<div align="right" style="color:orange;">이 웹페이지는 <a href="https://www.google.com/intl/ko/chrome/browser/features.html">Chrome</a> 브라우저에 최적화 되어 있습니다</div>
 			</a>
 			<div id="templatemo_search">
 				<form action="#" method="get">
@@ -37,7 +37,7 @@
 						<li><a rel="nofollow" href="<%=commonURL%>/board.do?kind=report">사건/사고 신고</a></li>
 					</ul>
 				</li>
-				<li><a href="<%=commonURL%>/board.do" <%if(layout.equals("board")){ %>class="selected"<%} %>>Board</a>
+				<li><a href="<%=commonURL%>/board.do?kind=free" <%if(layout.equals("board")){ %>class="selected"<%} %>>Board</a>
 					<ul>
 						<li><a rel="nofollow" href="<%=commonURL%>/board.do?kind=free">자유게시판</a></li>
 						<li><a rel="nofollow" href="<%=commonURL%>/board.do?kind=none">익명게시판</a></li>

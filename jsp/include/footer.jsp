@@ -105,7 +105,7 @@
 		<div id="templatemo_footer">
 			<p>
 				Copyright © 2014 All rights reserved by <a href="">Jeon Young-Hyeon</a>.<br/>
-				이 웹페이지는 <a href="https://www.google.com/intl/ko/chrome/browser/features.html">Chrome</a> 브라우저에 최적화 되어 있습니다.</p>
+				이 웹페이지는 <a href="https://www.google.com/intl/ko/chrome/browser/features.html">Chrome</a> 브라우저에 최적화 되어 있습니다.
 			</p>
 		</div>
 		<!-- END of templatemo_footer -->

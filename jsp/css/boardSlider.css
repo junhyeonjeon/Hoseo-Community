@@ -1,0 +1,34 @@
+ul, li, a {
+	margin: 0;
+	padding: 0;
+}
+
+a {
+	color: #fff
+}
+
+li {
+	list-style: none;
+}
+
+#t {
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+}
+
+#t ul {
+	overflow: hidden;
+	width: 325%;
+	position: relative;
+	top: 25px;
+}
+
+#t li {
+	width: 220px;
+	height: 250px;
+	float: left;
+	margin-left: 22px;
+	line-height: 3;
+}

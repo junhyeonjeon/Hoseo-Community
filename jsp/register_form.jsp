@@ -15,7 +15,7 @@
 
 		<div id="templatemo_main">
 			
-			<form name="join" method="post" class="form-horizontal" role="form"	autocomplete="off">
+			<form name="join" method="post" class="form-horizontal">
 			<div align="center" class="login_form" style="height: 100%;">
 			    <div class="login_here">
 			    	<label>JOIN HERE</label>
@@ -100,7 +100,7 @@
 								<span class="sel_value">+82</span>
 							</span>
 							<span class="ps_box int_mobile"> 
-								<input type="text" name="phone" id="phone" maxlength="11" placeholder="휴대전화번호" class="int" onblur="check('phone')">
+								<input type="text" name="phone" id="phone" maxlength="11" placeholder="휴대전화번호" class="int" onblur="check('phone')"/>
 							</span>
 							<div align="left"><span class="error" name="phone_result" id="phone_result"></span></div>
 							<a href="javascript:checkPhone()" class="btn_c btn_mobile_submit">인증</a>
@@ -108,7 +108,7 @@
 						
 						<div id="authnoDiv" class="join_row join_mobile_certify">
 							<span class="ps_box int_mobile_certify"> 
-								<input type="text" name="key" id="key" maxlength="6" placeholder="인증번호" class="int" onblur="check('key')">								
+								<input type="text" name="key" id="key" maxlength="6" placeholder="인증번호" class="int" onblur="check('key')"/>								
 							</span>
 							<div align="left"><span class="error" name="key_result" id="key_result"></span></div>
 							<a href="javascript:checkKey()" class="btn_c btn_mobile_submit">확인</a>
@@ -126,5 +126,6 @@
 	
 	<!-- footer -->
 	<%@include file="./include/footer.jsp" %>
+
 </body>
 </html>
