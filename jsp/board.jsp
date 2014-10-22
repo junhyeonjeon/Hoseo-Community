@@ -20,7 +20,7 @@
 			</div>			
 			
 			<div id="gallery" class="pl3">
-				<div id="t">
+				<div id="t"> 
 					<ul>
 						<li>
 							<div class="col one_fourth gallery_box">
