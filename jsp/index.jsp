@@ -8,7 +8,7 @@
 <body>
 	<div id="templatemo_wrapper">
 	
-		<!-- header -->
+		<!-- header --> 
 		<%@include file="./include/header.jsp"%>
 				
 		<!-- Start slider -->
