@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="member">
+	<typeAlias alias="MemberDto" type="com.hoseo.member.MemberDto" />
+
+	<!-- 회원 추가 -->
+	<insert id="Member.insert" parameterClass="MemberDto">
+		<!--자동으로 seq 증가 -->
+		<selectKey resultClass="int" keyProperty="seq">
+			select
+			nvl(max(seq)+1, 1) from member
+		</selectKey>
+		insert into member
+		(
+		seq
+		,userid
+		,password
+		,username
+		,birth
+		,email
+		,phone
+		,wdate
+		,mdate
+		,delyn
+		,flag
+		)
+		values
+		(
+		#seq#
+		,#userid#
+		,#pw1#
+		,#username#
+		,#birth#
+		,#email#
+		,#phone#
+		,sysdate
+		,sysdate
+		,'N'
+		,'USER'
+		)
+	</insert>
+
+	<!-- 로그인 아이디 체크 -->
+	<select id="Member.login" parameterClass="MemberDto" resultClass="int">
+		select count(*)
+		from member
+		where userid = #userid# and password = #pw1# and delyn='N'
+	</select>
+
+	<!-- 로그인 성공시 해당 사용자의 이름 -->
+	<select id="Member.login_name" parameterClass="MemberDto" resultClass="String">
+		select username
+		from member
+		where userid = #userid#
+	</select>
+	
+	<!-- 사용자 아아디 찾기 -->
+	<select id="Member.search_id" parameterClass="MemberDto" resultClass="MemberDto">
+		select userid
+		from member
+		where email = #email# and delyn='N'
+	</select>
+
+	<!-- 비밀번호 찾기 - 아이디 및 이메일 일치 확인 -->
+	<select id="Member.idAndEmail" parameterClass="MemberDto" resultClass="int">
+		select count(*)
+		from member
+		where userid = #userid# and email = #email# and delyn = 'N'
+	</select>
+	
+	<!-- 비밀번호 찾기 - 임시 비밀번호 변경 -->
+	<update id="Member.search_updatePw" parameterClass="MemberDto">
+		update member
+		set password = #pw1#
+		where userid = #userid#
+	</update>
+	
+	<!-- 개인정보 수정 부분 -->
+	<update id="Member.update" parameterClass="MemberDto">
+		update member
+		set password = #pw1#,
+			username = #username#,
+			birth = #birth#,
+			email = #email#,
+			phone = #phone#,
+			mdate = sysdate,
+			delyn = 'N',
+			flag = 'USER'
+		where userid = #userid#
+	</update>
+	
+	
+	<!-- 회원 탈퇴  -->
+	<update id="Member.cancellation" parameterClass="MemberDto">
+		update member
+		set delyn = 'Y'
+			
+		where userid = #userid#
+	</update>
+	
+		<select id="Member.result_correction" parameterClass="MemberDto" resultClass="MemberDto">
+		select username, birth, email, phone
+		from member
+		where userid = #userid# and delyn = 'N'
+	</select>
+	
+	<!-- 현재 비밀번호 확인 -->
+	<select id= "Member.modify_password" parameterClass="MemberDto" resultClass="int">
+		select count(*)
+		from member
+		where userid = #userid# and delyn = 'N' and password = #pwf1#
+	</select>
+	
+	
+	
+</sqlMap>

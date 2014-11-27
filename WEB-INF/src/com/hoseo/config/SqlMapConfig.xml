@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMapConfig      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map Config 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-config-2.dtd">
+
+<sqlMapConfig>
+
+	<!-- 실제 쿼리는 xml 파일을 하나씩 만들어서 경로를 정확하게 기술해야 한다. -->
+	<sqlMap resource="com/hoseo/data/board.xml" />
+	<sqlMap resource="com/hoseo/data/gallery.xml" />
+	<sqlMap resource="com/hoseo/data/member.xml" />
+	<sqlMap resource="com/hoseo/data/message.xml" />
+
+</sqlMapConfig>

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:aop="http://www.springframework.org/schema/aop" xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+	http://www.springframework.org/schema/context
+	http://www.springframework.org/schema/context/spring-context-3.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd
+	http://www.springframework.org/schema/tx
+	http://www.springframework.org/schema/tx/spring-tx-3.0.xsd">
+
+	<!-- com.hoseo 아래의 패키지를 모두 검색해서 객체를 생성해야 할 클래스 찾아서 모두 객체를 생성해서 주입시켜라 콘트롤러 
+		@Controller : Controller 클래스 상속 안받음 POJO(Plan and Old Java Object) 서비스 @Service 
+		Dao단 @Repository 객체가 주입되어야 할경우 @Autowired -->
+
+	<!-- 어노테이션을 사용하기 위한 필수 태그 -->
+	<context:component-scan base-package="com.hoseo.*" />
+	<!-- 패키지 이름 붙이는 팁 : URL이 hoseo.com일경우 거꾸로 패키지를 만들면 된다 -->
+
+	<!--view Resolver -->
+	<bean id="internalResourceViewResolver"
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+		<property name="viewClass">
+			<value>org.springframework.web.servlet.view.JstlView</value>
+		</property>
+		<property name="prefix">
+			<value>/src/jsp/</value>
+		</property>
+		<property name="suffix">
+			<value>.jsp</value>
+		</property>
+	</bean>	
+	<!-- 서버 운영시 이 아래 에러페이지나 검증페이지 등을 만들 수 있다 -->
+	
+	<!-- 스프링 파일 업로드 - CommonfileUpload 라이브러리. 톰캣 아파치 사이트에 가보면 라이브러리 파일이 있으니 다운받아서 프로젝트에 추가한다. -->
+	<!-- 다운받은 라이브러리파일을 스프링하고 연결하기 위한 클래스를 제공 - 객체 만들어야 한다. -->
+	<bean id = "multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+		p:maxUploadSize="104857600"
+		p:maxInMemorySize="104857600">
+	</bean>
+
+</beans>  
+  

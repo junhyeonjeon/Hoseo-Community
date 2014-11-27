@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="board">
+	<typeAlias alias="BoardDto" type="com.hoseo.board.BoardDto" />
+
+	<!-- 게시글 저장 -->
+	<insert id="Board.insert" parameterClass="BoardDto">
+		<!--자동으로 seq 증가 -->
+		<selectKey resultClass="int" keyProperty="seq">
+			select
+			nvl(max(seq)+1, 1) from board
+		</selectKey>
+
+		insert into board
+		(
+		seq
+		,title
+		,contents
+		,writer
+		,wdate
+		,delyn
+		,hit
+		,category
+		,premium
+		,filename1
+		,filename2
+		,filename3
+		,filename4
+		,
+		filename5
+		)
+		values(
+		#seq#
+		,#title#
+		,#contents#
+		,#writer#
+		,sysdate
+		,'N'
+		,0
+		,#category#
+		,#premium#
+		,
+		<iterate property="filename" conjunction=",">
+			#filename[]#
+		</iterate>
+		)
+	</insert>
+
+	<!-- 프리미엄 게시글 가져오기 -->
+	<select id="Board.getPremium" parameterClass="BoardDto"
+		resultClass="BoardDto">
+		select B.seq, title , contents, M.username, hit, filename1, replecount, likecount
+		from board B
+		inner join member M on B.WRITER = M.USERID
+		where premium > 0 and category = #category# and B.delyn = 'N'
+		order by B.seq desc
+	</select>
+
+	<!-- 모든 게시글 가져오기 -->
+	<select id="Board.getList" parameterClass="java.util.Map"
+		resultClass="BoardDto">
+		select seq, title , contents, writer, username, to_char(wdate, 'yy-mm-dd')wdate, hit, filename1, filename2, filename3, filename4, filename5, num, replecount, likecount, premium
+		from 
+			(
+			select B.*, row_number() over(order by 1) as num, username
+			from board B
+			inner join member M on B.WRITER = M.USERID	
+			where B.delyn = 'N' and category = #category#
+			<isNotEmpty property="keyword">
+				<isEqual property="searchKey" compareValue="all">
+					and (title like '%$keyword$%' or contents like '%$keyword$%' or username like '%$keyword$%')
+				</isEqual>
+				<isEqual property="searchKey" compareValue="title">
+					and title like '%$keyword$%'
+				</isEqual>
+				<isEqual property="searchKey" compareValue="contents">
+					and contents like '%$keyword$%'
+				</isEqual>
+				<isEqual property="searchKey" compareValue="writer">
+					and writer like '%$keyword$%'
+				</isEqual>
+			</isNotEmpty>
+			order by B.seq desc
+			)
+		where num between ((#pg#-1)*#pageSize#)+1 and ((#pg#-1)*#pageSize#)+#pageSize#
+		order by seq desc
+	</select>
+
+	<!-- 게시글 총 갯수 -->
+	<select id="Board.totalList" parameterClass="BoardDto"
+		resultClass="int">
+		select count(*) 
+		from board B
+		inner join member M on B.writer = M.userid
+		where B.delyn = 'N' and category = #category#
+		<isNotEmpty property="keyword">
+			<isEqual property="searchKey" compareValue="all">
+				and (title like	'%$keyword$%' or contents like '%$keyword$%' or M.username like '%$keyword$%')
+			</isEqual>
+			<isEqual property="searchKey" compareValue="title">
+				and title like '%$keyword$%'
+			</isEqual>
+			<isEqual property="searchKey" compareValue="contents">
+				and contents like '%$keyword$%'
+			</isEqual>
+			<isEqual property="searchKey" compareValue="writer">
+				and M.username like '%$keyword$%'
+			</isEqual>
+			<isEqual property="searchKey" compareValue="">
+				and (title like '%$keyword$%' or contents like '%$keyword$%' or M.username like '%$keyword$%')
+			</isEqual>
+		</isNotEmpty>
+	</select>
+
+	<!-- 글 상세보기 내용가져오기 -->
+	<select id="Board.getContents" parameterClass="BoardDto"
+		resultClass="BoardDto">
+		select title, contents, username, B.wdate, hit, filename1, filename2, filename3, filename4, filename5, likecount, writer
+		from board B 
+		inner join member M on B.WRITER = M.USERID
+		where category = #category# and B.seq = #seq# and B.delyn='N'
+	</select>
+	
+	<!-- 댓글 갯수 가져오기 -->
+	<select id="Board.repleCount" parameterClass="BoardDto" resultClass="int">
+		select count(*)	from reple
+		where boardseq = #seq# and delyn='N'
+	</select>
+
+	<!-- 댓글 저장하기 -->
+	<insert id="Board.insertReple" parameterClass="BoardDto">
+		<!--자동으로 seq 증가 -->
+		<selectKey resultClass="int" keyProperty="num">
+			select nvl(max(seq)+1, 1) from reple
+		</selectKey>
+		insert into reple(
+			seq
+			,boardseq
+			,contents
+			,wdate
+			,delyn
+			,writer
+		)
+		values(
+			#num#
+			,#seq#
+			,#contents#
+			,sysdate
+			,'N'
+			,#writer#
+		)
+	</insert>
+	
+	<!-- 댓글 삭제 시 해당 게시글의 댓글 갯수 감소 -->
+	<update id="Board.deleteRepleForBoard" parameterClass="int">
+		update board
+		set replecount = replecount - 1
+		where seq = (
+						select boardseq
+						from reple
+						where seq = #reple_seq#
+					)
+	</update>
+	
+	<!-- 댓글 삭제하기 -->
+	<update id="Board.deleteReple" parameterClass="int">
+		update reple
+		set delyn = 'Y', mdate = sysdate
+		where seq = #reple_seq#
+	</update>
+
+	<!-- 댓글 가져오기 -->
+	<select id="Board.getRepleList" parameterClass="BoardDto" resultClass="BoardDto">
+		select R.seq, contents, username, R.wdate, writer
+		from reple R inner join member M on R.writer = M.userid
+		where boardseq = #seq# and R.delyn='N'
+		order by R.seq desc
+	</select>
+	
+	<!-- 댓글 개수 업데이트 -->
+	<update id="Board.updateAdd" parameterClass="BoardDto">
+		update board
+		set replecount = replecount + 1
+		where seq = #seq#
+	</update>
+	
+	<!-- 조회수 업데이트 -->
+	<update id="Board.updateHit" parameterClass="int">
+		update board
+		set hit = hit+1
+		where seq = #seq#
+	</update>
+	
+	<!-- 추천수 증가 -->
+	<update id="Board.updateLike" parameterClass="BoardDto">
+		update board
+		set likecount = likecount + 1
+		where seq = #seq#
+	</update>
+	
+	<!-- 게시글 삭제 -->
+	<!-- 번호, 작성자 일치 확인 -->
+	<select id="Board.seqCheck" parameterClass="BoardDto" resultClass="int">
+		select seq 
+		from board
+		where writer=#userid# and seq=#seq#
+	</select>
+	
+	<!-- 모든 확인과정 후 삭제 진행 -->
+	<update id="Board.delete" parameterClass="BoardDto">
+		update board
+		set delyn = 'Y', mdate = sysdate
+		where seq = #seq#
+	</update>
+	
+	<!-- 게시글 삭제 시 해당 댓글도 삭제 진행 -->
+	<update id="Board.delete_cascade" parameterClass="BoardDto">
+		update reple
+		set delyn = 'Y', mdate = sysdate
+		where boardseq = #seq#
+	</update>
+	
+	<!-- 게시글 수정 -->
+	<update id="Board.update" parameterClass="BoardDto">
+		update board
+		set title = #title#, contents = #contents#, mdate = sysdate
+		where seq = #seq#
+	</update>
+
+	<!-- 이전글 다음글 가져오기 -->
+	<select id="Board.next_prev" parameterClass="BoardDto" resultClass="BoardDto">
+		select next_title, next_seq, pre_title, pre_seq from
+		(
+			select seq, lead(title,1,'다음글 없음') over (order by seq) next_title, lead(seq,1,0) over (order by seq) next_seq
+						, lag(title,1,'이전글 없음') over (order by seq ) pre_title, lag(seq,1,0) over (order by seq ) pre_seq
+			from board
+			where delyn='N' and category=#category#
+		)
+		where seq = #seq#
+	</select>
+</sqlMap>

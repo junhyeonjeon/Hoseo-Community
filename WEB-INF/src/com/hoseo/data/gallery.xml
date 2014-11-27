@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="gallery">
+	<typeAlias alias="GalleryDto" type="com.hoseo.gallery.GalleryDto" />
+	<typeAlias alias="PagerDto" type="com.hoseo.page.Pager" />
+
+	<!-- 갤러리 목록 가져오기 -->
+	<select id="Gallery.getlist" parameterClass="PagerDto" resultClass="GalleryDto">
+	select *
+	from (
+		select e.*, row_number() over(order by 1) as num, username
+		from gallery e
+		inner join member M on e.WRITER = M.USERID
+		where e.delyn = 'N'
+		order by e.seq desc
+		)
+	where num between ((#pg#-1)*#pageSize#)+1 and ((#pg#-1)*#pageSize#)+#pageSize#
+	</select>
+
+	<!-- 갤러리 게시글 총 갯수 -->
+	<select id="Gallery.totalList" resultClass="int">
+		select count(*) from gallery
+		where delyn = 'N'
+	</select>
+
+	<!-- 갤러리 입력 -->
+	<insert id="Gallery.upload" parameterClass="GalleryDto">
+		<!--자동으로 seq 증가 -->
+		<selectKey resultClass="int" keyProperty="seq">
+			select
+			nvl(max(seq)+1, 1) from gallery
+		</selectKey>
+
+		insert into gallery(seq, title, url, delyn, writer, wdate)
+		values(
+		#seq#
+		,#title#
+		,#url#
+		,'N'
+		,#writer#
+		,sysdate		
+		)
+	</insert>
+	
+	<!-- 갤러리 삭제 -->
+	<!-- 번호, 작성자 일치 확인 -->
+	<select id="Gallery.seqCheck" parameterClass="GalleryDto" resultClass="int">
+		select seq 
+		from gallery 
+		where writer=#userid# and url=#url# and seq=#seq#
+	</select>
+	<!-- 모든 확인과정 후 삭제 진행 -->
+	<update id="Gallery.delete" parameterClass="GalleryDto">
+		update gallery
+		set delyn = 'Y', mdate = sysdate
+		where seq = #seq#
+	</update>
+
+</sqlMap>

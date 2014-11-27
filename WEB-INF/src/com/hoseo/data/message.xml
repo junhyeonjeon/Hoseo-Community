@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE sqlMap      
+    PUBLIC "-//ibatis.apache.org//DTD SQL Map 2.0//EN"      
+    "http://ibatis.apache.org/dtd/sql-map-2.dtd">
+
+<sqlMap namespace="message">
+	<typeAlias alias="MessageDto" type="com.hoseo.message.MessageDto" />
+
+
+	<!-- 쪽지 추가 -->
+	<insert id="Message.insert" parameterClass="MessageDto">
+
+		insert into message
+		(
+		sendid
+		,receiveid
+		,subject
+		,contents
+		,sdate
+		,delyn
+		)
+		values
+		(
+		#sendid#
+		,#receiveid#
+		,#subject#
+		,#contents#
+		,sysdate
+		,'N'
+		)
+	</insert>
+
+
+
+
+
+
+
+
+
+	<!-- 받은 쪽지 가져오기 -->
+	<select id="Message.receiveList" parameterClass="MessageDto" resultClass="MessageDto">
+	select sendid, receiveid, subject , contents, to_char(sdate, 'yy-mm-dd  [hh24:mi:ss]')sdate 
+	from message
+	where delyn = 'N' and receiveid= #receiveid#	<!-- ★ testt가 로그인했을때 받은 쪽지함목록출력.... -->
+	order by sdate desc
+	</select>
+
+
+
+
+	<!-- 보낸 쪽지 가져오기 -->
+	<select id="Message.sendList" parameterClass="MessageDto" resultClass="MessageDto">
+	select sendid, receiveid, subject , contents, to_char(sdate, 'yy-mm-dd  [hh24:mi:ss]')sdate 
+	from message
+	where delyn = 'N' and sendid= #sendid#	<!-- ★ testt가 로그인했을때 받은 쪽지함목록출력.... -->
+	order by sdate desc
+	</select>
+
+	<!-- 보낸 쪽지 가져오기 -->
+	<select id="Message.count" parameterClass="MessageDto" resultClass="int">
+	select count(*)
+	from message
+	where delyn = 'N' and receiveid= #receiveid#	<!-- ★ testt가 로그인했을때 받은 쪽지함목록출력.... -->
+	
+	</select>
+	
+
+
+</sqlMap>

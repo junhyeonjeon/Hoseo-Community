@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<!-- 스프링에 존재하는 org.springframework.jdbc.datasource.DrivierManagerDataSource 
+		클래스를 사용해 db와 연결을 한다. -->
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<!-- JDBC 드라이버 클래스 이름을 설정 -->
+		<property name="driverClassName">
+			<value>oracle.jdbc.driver.OracleDriver</value>
+		</property>
+
+		<!-- JDBC 접속 문자열 설정 -->
+		<property name="url">
+			<value>jdbc:oracle:thin:@112.166.83.83:1521:XE</value>
+		</property>
+
+		<!-- Oracle 유저 ID 설정 -->
+		<property name="username">
+			<value>myhome</value>
+		</property>
+
+		<!-- Oracle 패스워드 설정 -->
+		<property name="password">
+			<value>myhome1234</value>
+		</property>
+	</bean>
+
+	
+	<!-- MyBatis와 연결할 두 개의 객체를 만들어야 한다. -->
+	<bean id="sqlMapClient" class="org.springframework.orm.ibatis.SqlMapClientFactoryBean">
+		<!-- MyBatis 설정파일 놓는 위치에 대한 정보를 전달해줘야 한다. -->
+		<property name="configLocation" value="WEB-INF/src/com/hoseo/config/SqlMapConfig.xml"/>
+		<!-- dataSource 객체 참조 전달하기 -->
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+	
+	<bean id="sqlMapTemplate" class="org.springframework.orm.ibatis.SqlMapClientTemplate">
+		<!-- DB 개체 참조 전달 -->
+		<property name="sqlMapClient" ref="sqlMapClient"/>
+	</bean>
+	
+</beans>
