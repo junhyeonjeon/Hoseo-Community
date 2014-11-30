@@ -8,9 +8,11 @@
 	<typeAlias alias="MessageDto" type="com.hoseo.message.MessageDto" />
 
 
-	<!-- 쪽지 추가 -->
+	<!-- 쪽지 보내기 -->
 	<insert id="Message.insert" parameterClass="MessageDto">
-
+		<selectKey resultClass="String" keyProperty="receiveid">
+			select userid from member where username = #receiveid#
+		</selectKey>
 		insert into message
 		(
 		sendid
@@ -31,41 +33,29 @@
 		)
 	</insert>
 
-
-
-
-
-
-
-
-
 	<!-- 받은 쪽지 가져오기 -->
 	<select id="Message.receiveList" parameterClass="MessageDto" resultClass="MessageDto">
-	select sendid, receiveid, subject , contents, to_char(sdate, 'yy-mm-dd  [hh24:mi:ss]')sdate 
-	from message
-	where delyn = 'N' and receiveid= #receiveid#	<!-- ★ testt가 로그인했을때 받은 쪽지함목록출력.... -->
-	order by sdate desc
+		select M.username sendid, receiveid, subject , contents, to_char(sdate, 'yy-mm-dd[hh24:mi:ss]')sdate
+		from message S
+		inner join member M on S.sendid = M.userid 
+		where S.delyn = 'N' and receiveid= #receiveid#	<!-- ★ testt가 로그인했을때 받은 쪽지함목록출력.... -->
+		order by sdate desc
 	</select>
-
-
-
 
 	<!-- 보낸 쪽지 가져오기 -->
 	<select id="Message.sendList" parameterClass="MessageDto" resultClass="MessageDto">
-	select sendid, receiveid, subject , contents, to_char(sdate, 'yy-mm-dd  [hh24:mi:ss]')sdate 
-	from message
-	where delyn = 'N' and sendid= #sendid#	<!-- ★ testt가 로그인했을때 받은 쪽지함목록출력.... -->
-	order by sdate desc
+		select sendid, M.username receiveid, subject , contents, to_char(sdate, 'yy-mm-dd[hh24:mi:ss]')sdate
+		from message S
+		inner join member M on S.receiveid = M.userid 
+		where S.delyn = 'N' and sendid= #sendid#	<!-- ★ testt가 로그인했을때 받은 쪽지함목록출력.... -->
+		order by sdate desc
 	</select>
 
-	<!-- 보낸 쪽지 가져오기 -->
+	<!-- 새쪽지 개수 -->
 	<select id="Message.count" parameterClass="MessageDto" resultClass="int">
-	select count(*)
-	from message
-	where delyn = 'N' and receiveid= #receiveid#	<!-- ★ testt가 로그인했을때 받은 쪽지함목록출력.... -->
-	
+		select count(*)
+		from message
+		where delyn = 'N' and receiveid= #receiveid#	<!-- ★ testt가 로그인했을때 받은 쪽지함목록출력.... -->
 	</select>
-	
-
 
 </sqlMap>

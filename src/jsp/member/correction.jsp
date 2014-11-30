@@ -228,6 +228,66 @@
 	<!-- footer -->
 	<%@include file="../../include/footer.jsp"%>
 	<script type="text/JavaScript" src="<%=commonURL%>/src/js/member.js"></script>
+	<script>
+		// 개인정보 수정하기
+		function modify_ok() {
+
+			var username = document.getElementById("username").value;
+
+			var year = document.getElementById("year").value;
+			var month = document.getElementById("month").value;
+			var day = document.getElementById("day").value;
+
+			var email = document.getElementById("email").value;
+			var phone = document.getElementById("phone").value;
+
+			if (username == "") {
+				alert("닉네임을 확인해주세요");
+				return false;
+			}
+			if (year == "") {
+				alert("생년 확인 해주세요");
+				return false;
+			}
+			if (month == "") {
+				alert("월 확인해주세요");
+				return false;
+			}
+			if (day == "") {
+				alert("일 확인해주세요");
+				return false;
+			}
+			if (email == "") {
+				alert("이메일을 확인해주세요");
+				return false;
+			}
+			if (phone == "") {
+				alert("핸드폰 번호를 확인해주세요");
+			}
+
+			alert("회원정보 수정완료시 index 페이지로 이동 합니다.");
+
+			var frm = document.join;
+			frm.action = "./modify_ok.do";
+			frm.submit();
+		}
+
+		function correction_check(id) {
+			// 입력 값 받아오기
+			var id = document.getElementById(id).id;
+			var value = document.getElementById(id).value;
+
+			// 출력 input 설정
+			var rootTag = document.getElementById(id + "_result");
+
+			// 입력 값이 없을 때
+			if ((id == "pw1" || id == "pw2") && value == "") {
+				rootTag.innerHTML = "미입력시 현재비밀번호로 저장됩니다.";
+				rootTag.value = id;
+
+			}
+		}
+	</script>
 
 </body>
 </html>

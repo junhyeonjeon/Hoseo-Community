@@ -68,15 +68,13 @@ li {
 
 						<div align="center" class="login_input" style="margin-top: 0px">
 
-							<input type="hidden" name="sendid" id="sendid"
-								placeholder="보내는사람" value="<%=userid%>" /><br />
+							<input type="hidden" name="sendid" id="sendid" value="<%=userid%>" /><br />
 							<br />
 							<div align="left">
 								<span class="error" name="sendid_result" id="sendid_result"></span>
 							</div>
 
-							<input type="text" name="receiveid" id="receiveid"
-								placeholder="받는사람" />
+							<input type="text" name="receiveid" id="receiveid" placeholder="받는사람 닉네임" />
 							<div align="left">
 								<span class="error" name="receiveid_result"
 									id="receiveid_result"></span>
