@@ -12,35 +12,22 @@
 
 		<input type="hidden" name="userid" value="<%=userid%>" /> <br />
 		
-		<%=username%>(<%=userid%>)님, 안녕 </br> </br>
+		<%=username%>(<%=userid%>)님<br/> 안녕하세요. </br> </br>
 
 		<ul>
-			<li><a href="<%=commonURL%>/message/message_receive.do"
-				class="button button-blue" style="width: 150px; height: 50px"> <span>받은쪽지함</span>
-			</a></li>
+			<li><a href="<%=commonURL%>/message/message_receive.do"	class="button button-blue" style="width: 150px; height: 50px;"> <span style="padding-top: 17px;">받은쪽지함</span></a></li>
 			<br />
 
-			<li><a href="<%=commonURL%>/message/message_send.do"
-				class="button button-blue" style="width: 150px; height: 50px"> <span>보낸쪽지함</span>
-			</a></li>
+			<li><a href="<%=commonURL%>/message/message_send.do" class="button button-blue" style="width: 150px; height: 50px"> <span style="padding-top: 17px;">보낸쪽지함</span></a></li>
 			<br />
 
-			<li><a href="<%=commonURL%>/message/message_form.do"
-				class="button button-blue" style="width: 150px; height: 50px"> <span>쪽
-						지 쓰 기</span>
-			</a></li>
+			<li><a href="<%=commonURL%>/message/message_form.do" class="button button-blue" style="width: 150px; height: 50px"> <span style="padding-top: 17px;">쪽	지 쓰 기</span></a></li>
 			<br />
 
-			<li><a href="javascript:document.join.submit()"
-				class="button button-blue" style="width: 150px; height: 50px"> <span>정보
-						수정</span>
-			</a></li>
+			<li><a href="javascript:document.join.submit()" class="button button-blue" style="width: 150px; height: 50px"> <span style="padding-top: 17px;">정보	수정</span></a></li>
 			<br />
 
-			<li><a href="javascript:cancellation() "
-				class="button button-blue" style="width: 150px; height: 50px"> <span>회원
-						탈퇴</span>
-			</a></li>
+			<li><a href="javascript:cancellation() " class="button button-blue" style="width: 150px; height: 50px"> <span style="padding-top: 17px;">회원 탈퇴</span></a></li>
 			<br />
 	</div>
 </form>

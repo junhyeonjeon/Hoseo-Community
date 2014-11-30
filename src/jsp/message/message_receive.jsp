@@ -1,14 +1,12 @@
 <%@page import="com.hoseo.message.*, java.util.*, com.hoseo.page.Pager"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<%@include file="../../include/checkLogin_MvIndex.jsp"%>
 <%@include file="../../include/head.jsp"%>
-<link rel="stylesheet" href="<%=commonURL%>/src/css/board_slider.css"
-	type="text/css" media="screen" />
-<link rel="stylesheet" href="<%=commonURL%>/src/css/board_write.css"
-	type="text/css" />
+<link rel="stylesheet" href="<%=commonURL%>/src/css/board_slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="<%=commonURL%>/src/css/board_write.css" type="text/css" />
 
 <style type="text/css">
 #leftview {
@@ -43,8 +41,6 @@ table td {
 		<!-- header -->
 		<%@include file="../../include/header.jsp"%>
 
-
-
 		<div id="templatemo_main">
 
 			<br></br>
@@ -57,7 +53,6 @@ table td {
 			<br></br> <br></br> <br></br>
 			<%@include file="./message_side.jsp"%>
 			<!-- 왼쪽메뉴 : 끝 -->
-
 
 			<!-- 오른쪽 내용 : 시작 -->
 			<div id="rightview">

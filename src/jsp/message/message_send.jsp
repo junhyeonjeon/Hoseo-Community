@@ -3,6 +3,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<%@include file="../../include/checkLogin_MvIndex.jsp"%>
 <%@include file="../../include/head.jsp" %>
 <link rel="stylesheet" href="<%=commonURL%>/src/css/board_slider.css" type="text/css" media="screen" />
 <link rel="stylesheet" href="<%=commonURL%>/src/css/board_write.css" type="text/css"/>

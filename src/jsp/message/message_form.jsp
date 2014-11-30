@@ -1,16 +1,14 @@
-<%@page import="com.hoseo.message.MessageDto"%>
-<%@page import="java.util.List"%>
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@page import="com.hoseo.message.MessageDto, java.util.List"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<%@include file="../../include/checkLogin_MvIndex.jsp"%>
 <%@include file="../../include/head.jsp"%>
-<link rel="stylesheet" href="<%=commonURL%>/src/css/join.css"
-	type="text/css" />
-<link rel="stylesheet" href="<%=commonURL%>/src/css/login.css"
-	type="text/css" />
-
+<link rel="stylesheet" href="<%=commonURL%>/src/css/join.css" type="text/css" />
+<link rel="stylesheet" href="<%=commonURL%>/src/css/login.css" type="text/css" />
+<link rel="stylesheet" href="<%=commonURL%>/src/css/board_slider.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="<%=commonURL%>/src/css/board_write.css" type="text/css" />
 
 <style>
 #leftview {
@@ -35,7 +33,7 @@ li {
 <script src="<%=commonURL%>/src/js/cancellation.js"></script>
 </head>
 
-<body>
+<body style="background-color: white;">
 
 	<div id="templatemo_wrapper">
 
@@ -44,18 +42,17 @@ li {
 
 		<div id="templatemo_main">
 
-			<!-- MY Page 이미지 삽입 -->
 			<br></br>
-			<div align="center" style="width: 100%;">
-				<img src="http://www.topsecretglasgow.com/image-files/ts_my_page_500_v1.png" align="middle"/>
+			<div
+				style="width: 100%; height: 50px; font-family: 돋음체; font-size: 70px;">
+				<img
+					src="http://www.topsecretglasgow.com/image-files/ts_my_page_500_v1.png"></img>
 			</div>
 
-			<br /> <br /> <br />
+			<br></br> <br></br> <br></br>
 			<%@include file="./message_side.jsp"%>
-
-
-
-
+			<!-- 왼쪽메뉴 : 끝 -->
+			
 			<!-- rightview start -->
 			<div id="rightview">
 
@@ -63,7 +60,7 @@ li {
 
 					<div align="center" class="login_form" style="height: 100%;">
 						<div class="board_title">
-							<h3 style="text-align: center; color: black">쪽지 보내기</h3>
+							<h3 style="text-align: center;">쪽지 보내기</h3>
 						</div>
 
 						<div align="center" class="login_input" style="margin-top: 0px">
@@ -97,20 +94,17 @@ li {
 								</div>
 
 
-								<div id="idDiv" class="join_row">
-									<span class="ps_box int_id" style="height: 100px"> <textarea
-											name="contents" id="contents"
-											onkeyup="chkMsgLength(200,contents,currentMsgLen);"
-											placeholder="내용" class="input_id"
+								<div id="idDiv" class="join_row" style="height: 150px;">
+									<span class="ps_box int_id" style="height: 100px"> 
+									<textarea name="contents" id="contents" onkeyup="chkMsgLength(200,contents,currentMsgLen);" placeholder="내용" class="input_id"
 											style="margin: 0px; width: 470px; height: 90px;"></textarea>
-										<div align="right" style="margin-right: 120px;">
-											<span id="currentMsgLen" style="text-align: right;">0</span>
-											/ 200byte
-										</div>
+										
 									</span>
+									<div align="right" style="margin-top: 10px">
+											<span id="currentMsgLen">0</span> / 200byte
+									</div>
 									<div align="left">
-										<span class="error" name="contents_result"
-											id="contents_result"></span>
+										<span class="error" name="contents_result" id="contents_result"></span>
 									</div>
 								</div>
 
