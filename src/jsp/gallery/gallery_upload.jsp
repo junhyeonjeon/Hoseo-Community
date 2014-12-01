@@ -13,7 +13,7 @@
 		<!-- header -->
 		<%@include file="../../include/header.jsp" %>
 		
-		<form name="gallery_upload_form" method="post" enctype="multipart/form-data">
+		<form name="gallery_upload_form" method="post" enctype="multipart/form-data" onkeydown="javascript:if(event.keyCode==13){upload();}">
 		<div id="templatemo_main">
 		
 			<input type="hidden" name="writer" id="writer" value="<%=userid%>"/>
@@ -39,7 +39,7 @@
 				</div>
 			    <div class="clear h40"></div>
 			    <div align="center">
-			    		<a href="javascript:upload()"><input type="button" class="thoughtbot" value="이미지 업로드"/></a>
+			    		<input type="button" class="thoughtbot" value="이미지 업로드" onclick="upload()"/>
 			    </div>
 			    
 			    
@@ -76,7 +76,7 @@
 				frm.file.focus();
 				return;
 			}
-
+			alert("이미지를 업로드하였습니다.");
 			frm.submit();
 		}
 

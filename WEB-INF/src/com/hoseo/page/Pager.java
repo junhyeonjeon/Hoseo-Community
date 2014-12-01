@@ -65,7 +65,7 @@ public class Pager {
 		int pageCount = rowCount / page;
 
 		// 나머지 글에 대한 처리
-		if (rowCount % 8 > 0)
+		if (rowCount % page > 0)
 			pageCount++;
 
 		return pageCount;

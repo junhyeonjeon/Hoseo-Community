@@ -4,20 +4,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <%@include file="../../include/head.jsp"%>
-
-<%
-	if (session.getAttribute("userid") == null) {
-		
-	
-%>
-
- <script>location.href = "/hoseo/index.do"; </script>
-<%
-	}
-%>
-
-
-
+<%@include file="../../include/checkLogin_MvIndex.jsp"%>
 
 <style type="text/css">
 <!--

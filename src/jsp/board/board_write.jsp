@@ -6,8 +6,6 @@
 <%@include file="../../include/checkLogin.jsp"%>
 <%@include file="../../include/head.jsp"%>
 <link rel="stylesheet" href="<%=commonURL%>/src/css/board_write.css" type="text/css"/>
-<script src="<%=commonURL%>/src/js/board.js"></script>
-<script type="text/javascript" src="<%=request.getContextPath()%>/src/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -146,6 +144,9 @@
 	<!-- END of templatemo_wrapper -->
 
 	<%@include file="../../include/footer.jsp"%>
+	<script>
+		document.getElementById("title").focus();
+	</script>
 	
 	<script>
 		// 프리미엄 게시글 이미지 div 창 출력 조절
@@ -157,7 +158,9 @@
 			else
 				file.style.display = 'none';
 		}
-	</script>
+	</script>	
+	<script src="<%=commonURL%>/src/js/board.js"></script>
+	<script type="text/javascript" src="<%=request.getContextPath()%>/src/smarteditor/js/HuskyEZCreator.js" charset="utf-8"></script>
 
 </body>
 </html>

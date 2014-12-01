@@ -62,8 +62,7 @@
 					<li class="flow">중고물품 거래가 가능합니다</li>
 					<li class="flow">원룸 광고와 평가가 가능합니다</li>
 					<li class="flow">회원은 모든 게시글에 코멘트가 가능합니다</li>
-					<li class="flow">회원 간의 쪽지로 소통이 가능합니다</li>
-					<!-- <li class="flow">호서커뮤니티는 학과 전용 게시판을 지원해드립니다</li> -->
+					<li class="flow">회원 간에 쪽지로 소통이 가능합니다</li>
 				</ul>
 			</div>
 

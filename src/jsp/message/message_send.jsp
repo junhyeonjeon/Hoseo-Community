@@ -70,7 +70,7 @@ table td { overflow: hidden; text-overflow:ellipsis;  white-space:nowrap;}
 					
 						<thead>
 							<tr class="tr_board">
-								<td>받은사람</td>
+								<td>받는사람</td>
 								<td>제목</td>
 								<td>내용</td>
 								<td>날짜</td>

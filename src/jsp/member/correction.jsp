@@ -7,6 +7,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<%@include file="../../include/checkLogin_MvIndex.jsp"%>
 <%@include file="../../include/head.jsp"%>
 <link rel="stylesheet" href="<%=commonURL%>/src/css/join.css"
 	type="text/css" />
@@ -265,7 +266,7 @@
 				alert("핸드폰 번호를 확인해주세요");
 			}
 
-			alert("회원정보 수정완료시 index 페이지로 이동 합니다.");
+			alert("회원정보 수정완료. index 페이지로 이동 합니다.");
 
 			var frm = document.join;
 			frm.action = "./modify_ok.do";
