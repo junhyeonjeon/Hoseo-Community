@@ -81,7 +81,7 @@
 					and contents like '%$keyword$%'
 				</isEqual>
 				<isEqual property="searchKey" compareValue="writer">
-					and writer like '%$keyword$%'
+					and username like '%$keyword$%'
 				</isEqual>
 			</isNotEmpty>
 			order by B.seq desc
